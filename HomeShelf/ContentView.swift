@@ -9,13 +9,38 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+        NavigationView {
+            List {
+                Text("Library")
+                Group {
+                    NavigationLink(destination: ContentView()) {
+                        Label("All", systemImage: "book")
+                    }
+                    NavigationLink(destination: ContentView()) {
+                        Label("Want to read", systemImage: "bookmark")
+                    }
+                    NavigationLink(destination: ContentView()) {
+                        Label("In process", systemImage: "arrow.right.circle")
+                    }
+                    NavigationLink(destination: ContentView()) {
+                        Label("Finished", systemImage: "book.closed.circle")
+                    }
+                    NavigationLink(destination: ContentView()) {
+                        Label("Loaned", systemImage: "person.badge.clock")
+                    }
+                }
+                Spacer()
+                Text("Your lists")
+                Group {
+                    NavigationLink(destination: ContentView()) {
+                        Label("Favorites", systemImage: "star")
+                    }
+                    NavigationLink(destination: ContentView()) {
+                        Label("New list", systemImage: "plus")
+                    }
+                }
+            }.listStyle(SidebarListStyle())
         }
-        .padding()
     }
 }
 
