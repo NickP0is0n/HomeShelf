@@ -12,8 +12,10 @@ struct ContentView: View {
         NavigationView {
             List {
                 Text("Library")
+                    .font(.subheadline)
+                    .fontWeight(.semibold)
                 Group {
-                    NavigationLink(destination: ContentView()) {
+                    NavigationLink(destination: AllBooksView()) {
                         Label("All", systemImage: "book")
                     }
                     NavigationLink(destination: ContentView()) {
@@ -31,6 +33,8 @@ struct ContentView: View {
                 }
                 Spacer()
                 Text("Your lists")
+                    .font(.subheadline)
+                    .fontWeight(.semibold)
                 Group {
                     NavigationLink(destination: ContentView()) {
                         Label("Favorites", systemImage: "star")
@@ -39,9 +43,23 @@ struct ContentView: View {
                         Label("New list", systemImage: "plus")
                     }
                 }
-            }.listStyle(SidebarListStyle())
+            }
+            .listStyle(SidebarListStyle())
+            .frame(minWidth: 150, idealWidth: 250, maxWidth: 300)
+            .toolbar {
+                ToolbarItem(placement: .navigation){
+                    Button(action: toggleSidebar, label: {
+                        Image(systemName: "sidebar.left")
+                    })
+                    }
+                }
+            AllBooksView()
         }
     }
+}
+
+func toggleSidebar() {
+        NSApp.keyWindow?.firstResponder?.tryToPerform(#selector(NSSplitViewController.toggleSidebar(_:)), with: nil)
 }
 
 struct ContentView_Previews: PreviewProvider {
