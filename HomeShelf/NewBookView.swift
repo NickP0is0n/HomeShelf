@@ -28,9 +28,14 @@ struct NewBookView: View {
                         .padding(.bottom)
                     TextField("Store link", text: $titleFieldText)
                         .padding(.bottom)
-                    Text("Cover")
-                        .padding(.bottom)
-                }.frame(width: 270)
+                    HStack {
+                        Text("Cover")
+                            .padding(.bottom)
+                        Rectangle()
+                            .frame(width: 50, height: 75).cornerRadius(9)
+                    }
+                    
+                }.padding(.top).frame(width: 270)
             }
                 HStack {
                     Spacer()
