@@ -15,6 +15,7 @@
 		39B118B62A31D9DE007BAA63 /* HomeShelfTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39B118B52A31D9DE007BAA63 /* HomeShelfTests.swift */; };
 		39B118C02A31D9DE007BAA63 /* HomeShelfUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39B118BF2A31D9DE007BAA63 /* HomeShelfUITests.swift */; };
 		39B118C22A31D9DE007BAA63 /* HomeShelfUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39B118C12A31D9DE007BAA63 /* HomeShelfUITestsLaunchTests.swift */; };
+		39ED86782A33304E001F7580 /* NewBookView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39ED86772A33304E001F7580 /* NewBookView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		39B118BB2A31D9DE007BAA63 /* HomeShelfUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HomeShelfUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		39B118BF2A31D9DE007BAA63 /* HomeShelfUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeShelfUITests.swift; sourceTree = "<group>"; };
 		39B118C12A31D9DE007BAA63 /* HomeShelfUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeShelfUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		39ED86772A33304E001F7580 /* NewBookView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewBookView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +105,7 @@
 				39B118AC2A31D9DD007BAA63 /* HomeShelf.entitlements */,
 				39B118A92A31D9DD007BAA63 /* Preview Content */,
 				394B41C92A31E65600FB3797 /* AllBooksView.swift */,
+				39ED86772A33304E001F7580 /* NewBookView.swift */,
 			);
 			path = HomeShelf;
 			sourceTree = "<group>";
@@ -262,6 +265,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				39ED86782A33304E001F7580 /* NewBookView.swift in Sources */,
 				39B118A62A31D9DB007BAA63 /* ContentView.swift in Sources */,
 				39B118A42A31D9DB007BAA63 /* HomeShelfApp.swift in Sources */,
 				394B41CA2A31E65600FB3797 /* AllBooksView.swift in Sources */,
