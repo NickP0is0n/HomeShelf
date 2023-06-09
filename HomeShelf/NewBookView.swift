@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct NewBookView: View {
+    @Binding var addBookSheetActivated: Bool
     @State var titleFieldText: String = ""
     
     var body: some View {
@@ -17,6 +18,7 @@ struct NewBookView: View {
                 .fontWeight(.bold)
                 .padding(.top)
             Divider()
+            HStack {
                 Form {
                     TextField("Title", text: $titleFieldText)
                         .padding(.bottom)
@@ -28,7 +30,8 @@ struct NewBookView: View {
                         .padding(.bottom)
                     Text("Cover")
                         .padding(.bottom)
-                }
+                }.frame(width: 270)
+            }
                 HStack {
                     Spacer()
                     Button(action: dummyButtonAction) {
@@ -40,18 +43,19 @@ struct NewBookView: View {
                     }
                     .padding([.bottom, .trailing])
                 }
-            }
+            }.frame(width: 400)
         
-        
+    }
+    
+    func dummyButtonAction() {
+        addBookSheetActivated = false
     }
 }
 
-func dummyButtonAction() {
-    
-}
+
 
 struct NewBookView_Previews: PreviewProvider {
     static var previews: some View {
-        NewBookView()
+        NewBookView(addBookSheetActivated: .constant(true))
     }
 }

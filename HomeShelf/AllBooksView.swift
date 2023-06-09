@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct AllBooksView: View {
+    @State var addBookSheetActivated = false
+    
     var body: some View {
         ScrollView {
         }.navigationTitle("All books")
@@ -15,15 +17,18 @@ struct AllBooksView: View {
             ToolbarItem(placement: .navigation){
                 Button(action: addBook, label: {
                     Image(systemName: "plus.app")
-                })
+                }).sheet(isPresented: $addBookSheetActivated) {
+                    NewBookView(addBookSheetActivated: $addBookSheetActivated)
+                }
             }
         }
     }
+    
+    func addBook() {
+        addBookSheetActivated.toggle()
+    }
 }
 
-func addBook() {
-    
-}
 
 struct AllBooksView_Previews: PreviewProvider {
     static var previews: some View {
