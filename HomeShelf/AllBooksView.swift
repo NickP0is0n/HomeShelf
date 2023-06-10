@@ -9,6 +9,9 @@ import SwiftUI
 
 struct AllBooksView: View {
     @State var addBookSheetActivated = false
+    @EnvironmentObject var manager: DataController
+    @Environment(\.managedObjectContext) private var viewContext
+    @FetchRequest(sortDescriptors: []) private var bookEntities: FetchedResults<BookEntity>
     
     var body: some View {
         ScrollView {
@@ -19,6 +22,8 @@ struct AllBooksView: View {
                     Image(systemName: "plus.app")
                 }).sheet(isPresented: $addBookSheetActivated) {
                     NewBookView(addBookSheetActivated: $addBookSheetActivated)
+                        .environmentObject(manager)
+                        .environment(\.managedObjectContext, manager.container.viewContext)
                 }
             }
         }

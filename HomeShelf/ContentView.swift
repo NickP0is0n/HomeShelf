@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    @EnvironmentObject var manager: DataController
+    @Environment(\.managedObjectContext) private var viewContext
    
     var body: some View {
         NavigationView {
@@ -16,7 +19,8 @@ struct ContentView: View {
                     .font(.subheadline)
                     .fontWeight(.semibold)
                 Group {
-                    NavigationLink(destination: AllBooksView()) {
+                    NavigationLink(destination: AllBooksView()
+                        .environment(\.managedObjectContext, manager.container.viewContext)) {
                         Label("All", systemImage: "book")
                     }
                     NavigationLink(destination: ContentView()) {

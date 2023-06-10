@@ -7,10 +7,16 @@
 
 import SwiftUI
 import AppKit
+import CoreData
 
 struct NewBookView: View {
+    @EnvironmentObject var manager: DataController
+    @Environment(\.managedObjectContext) private var viewContext
     @Binding var addBookSheetActivated: Bool
     @State var titleFieldText: String = ""
+    @State var authorFieldText: String = ""
+    @State var pageCountText: String = ""
+    @State var storeLinkText: String = ""
     @State var coverPictureFilename: String = ""
     
     var body: some View {
@@ -24,11 +30,11 @@ struct NewBookView: View {
                 Form {
                     TextField("Title", text: $titleFieldText)
                         .padding(.bottom)
-                    TextField("Author", text: $titleFieldText)
+                    TextField("Author", text: $authorFieldText)
                         .padding(.bottom)
-                    TextField("Page count", text: $titleFieldText)
+                    TextField("Page count", text: $pageCountText)
                         .padding(.bottom)
-                    TextField("Store link", text: $titleFieldText)
+                    TextField("Store link", text: $storeLinkText)
                         .padding(.bottom)
                     HStack {
                         Text("Cover")
@@ -51,11 +57,11 @@ struct NewBookView: View {
             }
                 HStack {
                     Spacer()
-                    Button(action: dummyButtonAction) {
+                    Button(action: cancelButtonAction) {
                         Text("Cancel")
                     }
                     .padding([.leading, .bottom])
-                    Button(action: dummyButtonAction) {
+                    Button(action: okButtonAction) {
                         Text("OK")
                     }
                     .padding([.bottom, .trailing])
@@ -64,8 +70,30 @@ struct NewBookView: View {
         
     }
     
-    func dummyButtonAction() {
+    func cancelButtonAction() {
         addBookSheetActivated = false
+    }
+    
+    func okButtonAction() {
+        let newBook = Book(title: titleFieldText, author: authorFieldText, cover: NSImage.init(byReferencingFile: coverPictureFilename)!, pageCount: Int(pageCountText) ?? 0, storeLink: storeLinkText)
+        saveBook(newBook: newBook)
+        addBookSheetActivated = false
+    }
+    
+    func saveBook(newBook: Book) {
+        let newBookEntity = BookEntity(context: viewContext)
+        newBookEntity.title = newBook.title
+        newBookEntity.author = newBook.author
+        newBookEntity.cover = newBook.cover.tiffRepresentation
+        newBookEntity.pageCount = Int16(newBook.pageCount)
+        newBookEntity.storeUrl = newBook.storeLink
+        do {
+            try viewContext.save()
+        } catch {
+            viewContext.rollback()
+            let nserror = error as NSError
+            fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
+        }
     }
     
     func imageSelectButtonAction() {
