@@ -21,6 +21,7 @@
 		39B118B62A31D9DE007BAA63 /* HomeShelfTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39B118B52A31D9DE007BAA63 /* HomeShelfTests.swift */; };
 		39B118C02A31D9DE007BAA63 /* HomeShelfUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39B118BF2A31D9DE007BAA63 /* HomeShelfUITests.swift */; };
 		39B118C22A31D9DE007BAA63 /* HomeShelfUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39B118C12A31D9DE007BAA63 /* HomeShelfUITestsLaunchTests.swift */; };
+		39EA02FB2A35B99F00C2EFA2 /* BookCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39EA02FA2A35B99F00C2EFA2 /* BookCardView.swift */; };
 		39ED86782A33304E001F7580 /* NewBookView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39ED86772A33304E001F7580 /* NewBookView.swift */; };
 /* End PBXBuildFile section */
 
@@ -60,6 +61,7 @@
 		39B118BB2A31D9DE007BAA63 /* HomeShelfUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HomeShelfUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		39B118BF2A31D9DE007BAA63 /* HomeShelfUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeShelfUITests.swift; sourceTree = "<group>"; };
 		39B118C12A31D9DE007BAA63 /* HomeShelfUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeShelfUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		39EA02FA2A35B99F00C2EFA2 /* BookCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookCardView.swift; sourceTree = "<group>"; };
 		39ED86772A33304E001F7580 /* NewBookView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewBookView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -124,6 +126,7 @@
 				390FE1022A34655B00E3A84E /* Book.swift */,
 				390FE1062A34694700E3A84E /* LibraryDataModel.xcdatamodeld */,
 				390FE12F2A34715000E3A84E /* DataController.swift */,
+				39EA02FA2A35B99F00C2EFA2 /* BookCardView.swift */,
 			);
 			path = HomeShelf;
 			sourceTree = "<group>";
@@ -286,6 +289,7 @@
 				399B848E2A349C5300E0CF74 /* BookEntity+CoreDataClass.swift in Sources */,
 				390FE1012A34654F00E3A84E /* UserLibrary.swift in Sources */,
 				390FE1082A34694700E3A84E /* LibraryDataModel.xcdatamodeld in Sources */,
+				39EA02FB2A35B99F00C2EFA2 /* BookCardView.swift in Sources */,
 				39ED86782A33304E001F7580 /* NewBookView.swift in Sources */,
 				390FE1032A34655B00E3A84E /* Book.swift in Sources */,
 				390FE1302A34715000E3A84E /* DataController.swift in Sources */,
