@@ -24,7 +24,7 @@ struct AllBooksView: View {
                     let book = Book(title: bookEntity.title ?? "", author: bookEntity.author ?? "", cover: NSImage.init(data: bookEntity.cover!) ?? NSImage(), pageCount: Int(bookEntity.pageCount), storeLink: bookEntity.storeUrl ?? "")
                     BookCardView(book: book)
                 }
-            }
+            }.background(.background)
         }
         .navigationTitle("All books")
         .toolbar {
