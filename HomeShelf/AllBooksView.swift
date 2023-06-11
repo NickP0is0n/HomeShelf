@@ -13,9 +13,20 @@ struct AllBooksView: View {
     @Environment(\.managedObjectContext) private var viewContext
     @FetchRequest(sortDescriptors: []) private var bookEntities: FetchedResults<BookEntity>
     
+    let columns = [
+            GridItem(.adaptive(minimum: 150))
+        ]
+    
     var body: some View {
         ScrollView {
-        }.navigationTitle("All books")
+            LazyVGrid(columns: columns, spacing: 20) {
+                ForEach(bookEntities) { bookEntity in
+                    let book = Book(title: bookEntity.title ?? "", author: bookEntity.author ?? "", cover: NSImage.init(data: bookEntity.cover!) ?? NSImage(), pageCount: Int(bookEntity.pageCount), storeLink: bookEntity.storeUrl ?? "")
+                    BookCardView(book: book)
+                }
+            }
+        }
+        .navigationTitle("All books")
         .toolbar {
             ToolbarItem(placement: .navigation){
                 Button(action: addBook, label: {
