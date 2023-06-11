@@ -22,7 +22,6 @@ struct BookCardView: View {
             Text(book.author)
                 .font(.body)
                 .padding([.leading, .bottom])
-            
         }
     }
 }
