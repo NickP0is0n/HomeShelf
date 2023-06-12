@@ -75,18 +75,17 @@ struct NewBookView: View {
     }
     
     func okButtonAction() {
-        let newBook = Book(title: titleFieldText, author: authorFieldText, cover: NSImage.init(byReferencingFile: coverPictureFilename)!, pageCount: Int(pageCountText) ?? 0, storeLink: storeLinkText)
-        saveBook(newBook: newBook)
+        saveBook()
         addBookSheetActivated = false
     }
     
-    func saveBook(newBook: Book) {
+    func saveBook() {
         let newBookEntity = BookEntity(context: viewContext)
-        newBookEntity.title = newBook.title
-        newBookEntity.author = newBook.author
-        newBookEntity.cover = newBook.cover.tiffRepresentation
-        newBookEntity.pageCount = Int16(newBook.pageCount)
-        newBookEntity.storeUrl = newBook.storeLink
+        newBookEntity.title = titleFieldText
+        newBookEntity.author = authorFieldText
+        newBookEntity.cover = NSImage.init(byReferencingFile: coverPictureFilename)!.tiffRepresentation
+        newBookEntity.pageCount = Int16(pageCountText) ?? 0
+        newBookEntity.storeUrl = storeLinkText
         do {
             try viewContext.save()
         } catch {

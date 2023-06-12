@@ -8,24 +8,24 @@
 import SwiftUI
 
 struct ExploreBookView: View {
-    let book: Book
+    let book: BookEntity
     
     var body: some View {
         VStack(alignment: .leading) {
             HStack (alignment: .top, spacing: 12) {
-                Image(nsImage: book.cover)
+                Image(nsImage: NSImage.init(data: book.cover!)!)
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                     .clipped()
                     .frame(maxWidth: 300, maxHeight: .infinity)
                 VStack(alignment: .leading, spacing: 8) {
-                    Text(book.title)
+                    Text(book.title!)
                         .font(.title)
                         .fontWeight(.bold)
                         .padding(.top)
-                    Text(book.author)
+                    Text(book.author!)
                     VStack(alignment: .leading, spacing: 1) {
-                        BookRatingView(bookRating: book.rating)
+                        BookRatingView(bookRating: Int(book.rating))
                         Text("My rating")
                             .font(.subheadline)
                     }
@@ -57,7 +57,7 @@ struct ExploreBookView: View {
                     .font(.title)
                     .fontWeight(.bold)
                 ScrollView {
-                    Text(book.review)
+                    Text(book.review!)
                 }.frame(minHeight: 100)
             }.padding()
         }.padding()
@@ -67,6 +67,6 @@ struct ExploreBookView: View {
 struct ExploreBookView_Previews: PreviewProvider {
     
     static var previews: some View {
-        ExploreBookView(book: Book(title: "Sample book", author: "Sample author", cover: NSImage(named: NSImage.Name("sample_book"))!, pageCount: 300, storeLink: "http://samplestore.com/", rating: 3, review: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec lorem nisl, iaculis sit amet tempor nec, rhoncus eget arcu. Sed ullamcorper ipsum at nunc mollis, vitae suscipit orci scelerisque. Donec nec pulvinar eros. Sed felis elit, iaculis et euismod eu, vehicula sed dolor. Pellentesque odio eros, congue a vulputate ultricies, auctor eget ex. Mauris mollis nulla elit, non sollicitudin risus placerat vitae. Curabitur id est ac sapien lobortis accumsan a et eros. In venenatis quam ut ipsum sollicitudin, nec commodo felis laoreet. Vivamus euismod turpis quis auctor consequat. Morbi iaculis nulla nec velit interdum volutpat. Sed pretium lectus a porttitor dictum."))
+        ExploreBookView(book: BookEntity())
     }
 }

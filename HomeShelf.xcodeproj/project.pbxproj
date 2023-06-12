@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		390FE1032A34655B00E3A84E /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = 390FE1022A34655B00E3A84E /* Book.swift */; };
 		390FE1082A34694700E3A84E /* LibraryDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 390FE1062A34694700E3A84E /* LibraryDataModel.xcdatamodeld */; };
 		390FE1302A34715000E3A84E /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 390FE12F2A34715000E3A84E /* DataController.swift */; };
 		391849842A3707D700E34E4D /* BookRatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 391849832A3707D700E34E4D /* BookRatingView.swift */; };
@@ -44,7 +43,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		390FE1022A34655B00E3A84E /* Book.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
 		390FE1072A34694700E3A84E /* LibraryDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = LibraryDataModel.xcdatamodel; sourceTree = "<group>"; };
 		390FE12F2A34715000E3A84E /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
 		391849832A3707D700E34E4D /* BookRatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookRatingView.swift; sourceTree = "<group>"; };
@@ -124,7 +122,6 @@
 				39B118A92A31D9DD007BAA63 /* Preview Content */,
 				394B41C92A31E65600FB3797 /* AllBooksView.swift */,
 				39ED86772A33304E001F7580 /* NewBookView.swift */,
-				390FE1022A34655B00E3A84E /* Book.swift */,
 				390FE1062A34694700E3A84E /* LibraryDataModel.xcdatamodeld */,
 				390FE12F2A34715000E3A84E /* DataController.swift */,
 				39EA02FA2A35B99F00C2EFA2 /* BookCardView.swift */,
@@ -294,7 +291,6 @@
 				390FE1082A34694700E3A84E /* LibraryDataModel.xcdatamodeld in Sources */,
 				39EA02FB2A35B99F00C2EFA2 /* BookCardView.swift in Sources */,
 				39ED86782A33304E001F7580 /* NewBookView.swift in Sources */,
-				390FE1032A34655B00E3A84E /* Book.swift in Sources */,
 				390FE1302A34715000E3A84E /* DataController.swift in Sources */,
 				39B118A62A31D9DB007BAA63 /* ContentView.swift in Sources */,
 				39B118A42A31D9DB007BAA63 /* HomeShelfApp.swift in Sources */,

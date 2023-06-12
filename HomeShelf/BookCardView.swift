@@ -8,18 +8,18 @@
 import SwiftUI
 
 struct BookCardView: View {
-    let book: Book
+    let book: BookEntity
     
     var body: some View {
         VStack(alignment: .leading) {
-            Image(nsImage: book.cover)
+            Image(nsImage: NSImage.init(data: book.cover!)!)
                 .resizable()
                 .frame(width: 105, height: 160)
                 .padding()
-            Text(book.title)
+            Text(book.title!)
                 .font(.headline)
                 .padding(.leading)
-            Text(book.author)
+            Text(book.author!)
                 .font(.body)
                 .padding([.leading, .bottom])
         }
@@ -28,6 +28,6 @@ struct BookCardView: View {
 
 struct BookCardView_Previews: PreviewProvider {
     static var previews: some View {
-        BookCardView(book: Book(title: "Sample book", author: "Sample author", cover: NSImage(named: NSImage.Name("sample_book"))!, pageCount: 300, storeLink: "http://samplestore.com/"))
+        BookCardView(book: BookEntity())
     }
 }
