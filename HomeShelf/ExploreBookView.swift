@@ -16,7 +16,8 @@ struct ExploreBookView: View {
                 Image(nsImage: book.cover)
                     .resizable()
                     .aspectRatio(contentMode: .fit)
-                    .frame(height: 250)
+                    .clipped()
+                    .frame(maxWidth: 300, maxHeight: .infinity)
                 VStack(alignment: .leading, spacing: 8) {
                     Text(book.title)
                         .font(.title)
@@ -49,7 +50,7 @@ struct ExploreBookView: View {
                             Text("Loan book")
                         }
                     }.padding(.top)
-                }
+                }.frame(maxWidth: .infinity, maxHeight: .infinity)
             }.padding()
             VStack(alignment: .leading) {
                 Text("My review and thoughts")
@@ -59,7 +60,6 @@ struct ExploreBookView: View {
                     Text(book.review)
                 }.frame(minHeight: 100)
             }.padding()
-            
         }.padding()
     }
 }
