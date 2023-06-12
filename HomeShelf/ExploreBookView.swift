@@ -8,7 +8,8 @@
 import SwiftUI
 
 struct ExploreBookView: View {
-    let book: BookEntity
+    @ObservedObject var book: BookEntity
+    @State var progressEditSheetActivated = false
     
     var body: some View {
         VStack(alignment: .leading) {
@@ -30,14 +31,14 @@ struct ExploreBookView: View {
                             .font(.subheadline)
                     }
                     ProgressView(value: Float(book.progress), total: Float(book.pageCount)) {
-                        Text("Progress")
+                        Text("\(Int(book.progress / (book.pageCount / 100)))% of the book completed.")
                             .font(.subheadline)
                      }
                     HStack {
-                        Button(action: {
-                            
-                        }) {
+                        Button(action: updateProgressButtonAction) {
                             Text("Update progress")
+                        }.sheet(isPresented: $progressEditSheetActivated) {
+                            ProgressEditView(progressEditSheetActivated: $progressEditSheetActivated, book: book)
                         }
                         Button(action: {
                             
@@ -60,7 +61,11 @@ struct ExploreBookView: View {
                     Text(book.review)
                 }.frame(minHeight: 100)
             }.padding()
-        }.padding()
+        }.padding().background(.background)
+    }
+    
+    private func updateProgressButtonAction() {
+        progressEditSheetActivated = true
     }
 }
 
