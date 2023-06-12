@@ -48,7 +48,7 @@ struct ExploreBookView: View {
                         }) {
                             Text("Loan book")
                         }
-                    }
+                    }.padding(.top)
                 }
             }.padding()
             VStack(alignment: .leading) {

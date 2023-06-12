@@ -22,6 +22,15 @@ struct AllBooksView: View {
         if (bookSelected != nil) {
             ExploreBookView(book: bookSelected!)
                 .navigationTitle("\(bookSelected!.title) by \(bookSelected!.author)")
+                .toolbar {
+                    ToolbarItem(placement: .navigation){
+                        Button(action: {
+                            bookSelected = nil
+                        }, label: {
+                            Image(systemName: "chevron.left")
+                        })
+                    }
+                }
         }
         else {
             ScrollView {
