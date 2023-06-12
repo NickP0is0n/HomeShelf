@@ -26,4 +26,14 @@ class Book {
         self.rating = 0
         self.review = ""
     }
+    
+    init(title: String, author: String, cover: NSImage, pageCount: Int, storeLink: String, rating: Int, review: String) {
+        self.title = title
+        self.author = author
+        self.cover = cover
+        self.pageCount = pageCount
+        self.storeLink = storeLink
+        self.rating = rating
+        self.review = review
+    }
 }
