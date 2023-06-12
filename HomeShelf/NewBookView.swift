@@ -83,9 +83,10 @@ struct NewBookView: View {
         let newBookEntity = BookEntity(context: viewContext)
         newBookEntity.title = titleFieldText
         newBookEntity.author = authorFieldText
-        newBookEntity.cover = NSImage.init(byReferencingFile: coverPictureFilename)!.tiffRepresentation
+        newBookEntity.cover = NSImage.init(byReferencingFile: coverPictureFilename)!.tiffRepresentation!
         newBookEntity.pageCount = Int16(pageCountText) ?? 0
         newBookEntity.storeUrl = storeLinkText
+        newBookEntity.progress = 0
         do {
             try viewContext.save()
         } catch {

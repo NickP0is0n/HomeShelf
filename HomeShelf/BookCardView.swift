@@ -12,14 +12,14 @@ struct BookCardView: View {
     
     var body: some View {
         VStack(alignment: .leading) {
-            Image(nsImage: NSImage.init(data: book.cover!)!)
+            Image(nsImage: NSImage.init(data: book.cover)!)
                 .resizable()
                 .frame(width: 105, height: 160)
                 .padding()
-            Text(book.title!)
+            Text(book.title)
                 .font(.headline)
                 .padding(.leading)
-            Text(book.author!)
+            Text(book.author)
                 .font(.body)
                 .padding([.leading, .bottom])
         }

@@ -13,26 +13,26 @@ struct ExploreBookView: View {
     var body: some View {
         VStack(alignment: .leading) {
             HStack (alignment: .top, spacing: 12) {
-                Image(nsImage: NSImage.init(data: book.cover!)!)
+                Image(nsImage: NSImage.init(data: book.cover)!)
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                     .clipped()
                     .frame(maxWidth: 300, maxHeight: .infinity)
                 VStack(alignment: .leading, spacing: 8) {
-                    Text(book.title!)
+                    Text(book.title)
                         .font(.title)
                         .fontWeight(.bold)
                         .padding(.top)
-                    Text(book.author!)
+                    Text(book.author)
                     VStack(alignment: .leading, spacing: 1) {
                         BookRatingView(book: book)
                         Text("My rating")
                             .font(.subheadline)
                     }
-                    /*ProgressView(value: Float(100), total: Float(book.pageCount)) {
+                    ProgressView(value: Float(book.progress), total: Float(book.pageCount)) {
                         Text("Progress")
                             .font(.subheadline)
-                     }*/ //TODO:Make proper progress
+                     }
                     HStack {
                         Button(action: {
                             
@@ -57,7 +57,7 @@ struct ExploreBookView: View {
                     .font(.title)
                     .fontWeight(.bold)
                 ScrollView {
-                    Text(book.review!)
+                    Text(book.review)
                 }.frame(minHeight: 100)
             }.padding()
         }.padding()
