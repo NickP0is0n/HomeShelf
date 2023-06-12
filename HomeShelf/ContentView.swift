@@ -19,8 +19,7 @@ struct ContentView: View {
                     .font(.subheadline)
                     .fontWeight(.semibold)
                 Group {
-                    NavigationLink(destination: AllBooksView()
-                        .environment(\.managedObjectContext, manager.container.viewContext)) {
+                    NavigationLink(destination: AllBooksView()) {
                         Label("All", systemImage: "book")
                     }
                     NavigationLink(destination: ContentView()) {
