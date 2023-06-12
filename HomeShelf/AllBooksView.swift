@@ -12,31 +12,41 @@ struct AllBooksView: View {
     @EnvironmentObject var manager: DataController
     @Environment(\.managedObjectContext) private var viewContext
     @FetchRequest(sortDescriptors: []) private var bookEntities: FetchedResults<BookEntity>
+    @State var bookSelected: Book? = nil
     
     let columns = [
             GridItem(.adaptive(minimum: 150))
         ]
     
     var body: some View {
-        ScrollView {
-            LazyVGrid(columns: columns, spacing: 20) {
-                ForEach(bookEntities) { bookEntity in
-                    let book = Book(title: bookEntity.title ?? "", author: bookEntity.author ?? "", cover: NSImage.init(data: bookEntity.cover!) ?? NSImage(), pageCount: Int(bookEntity.pageCount), storeLink: bookEntity.storeUrl ?? "")
-                    BookCardView(book: book)
-                }
-            }.background(.background)
+        if (bookSelected != nil) {
+            ExploreBookView(book: bookSelected!)
+                .navigationTitle("\(bookSelected!.title) by \(bookSelected!.author)")
         }
-        .navigationTitle("All books")
-        .toolbar {
-            ToolbarItem(placement: .navigation){
-                Button(action: addBook, label: {
-                    Image(systemName: "plus.app")
-                }).sheet(isPresented: $addBookSheetActivated) {
-                    NewBookView(addBookSheetActivated: $addBookSheetActivated)
+        else {
+            ScrollView {
+                LazyVGrid(columns: columns, spacing: 20) {
+                    ForEach(bookEntities) { bookEntity in
+                        let book = Book(title: bookEntity.title ?? "", author: bookEntity.author ?? "", cover: NSImage.init(data: bookEntity.cover!) ?? NSImage(), pageCount: Int(bookEntity.pageCount), storeLink: bookEntity.storeUrl ?? "")
+                        BookCardView(book: book).onTapGesture {
+                            bookSelected = book
+                        }
+                    }
+                }.background(.background)
+            }
+            .navigationTitle("All books")
+            .toolbar {
+                ToolbarItem(placement: .navigation){
+                    Button(action: addBook, label: {
+                        Image(systemName: "plus.app")
+                    }).sheet(isPresented: $addBookSheetActivated) {
+                        NewBookView(addBookSheetActivated: $addBookSheetActivated)
+                    }
                 }
             }
         }
-    }
+        }
+        
     
     func addBook() {
         addBookSheetActivated.toggle()
