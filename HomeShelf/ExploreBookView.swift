@@ -25,7 +25,7 @@ struct ExploreBookView: View {
                         .padding(.top)
                     Text(book.author!)
                     VStack(alignment: .leading, spacing: 1) {
-                        BookRatingView(bookRating: Int(book.rating))
+                        BookRatingView(book: book)
                         Text("My rating")
                             .font(.subheadline)
                     }
