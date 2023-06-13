@@ -31,7 +31,7 @@ struct ReviewEditView: View {
                     Text("Cancel")
                 }
             }.padding()
-        }
+        }.frame(minWidth: 500, minHeight: 500)
     }
     
     private func okButtonAction() {

@@ -10,6 +10,7 @@ import SwiftUI
 struct ExploreBookView: View {
     @ObservedObject var book: BookEntity
     @State var progressEditSheetActivated = false
+    @State var reviewEditSheetActivated = false
     
     var body: some View {
         VStack(alignment: .leading) {
@@ -54,9 +55,17 @@ struct ExploreBookView: View {
                 }.frame(maxWidth: .infinity, maxHeight: .infinity)
             }.padding()
             VStack(alignment: .leading) {
-                Text("My review and thoughts")
-                    .font(.title)
-                    .fontWeight(.bold)
+                HStack {
+                    Text("My review and thoughts")
+                        .font(.title)
+                        .fontWeight(.bold)
+                    Image(systemName: "pencil")
+                        .onTapGesture {
+                            reviewEditSheetActivated = true
+                        }.sheet(isPresented: $reviewEditSheetActivated) {
+                            ReviewEditView(book: book, isReviewEditActivated: $reviewEditSheetActivated)
+                        }
+                }
                 ScrollView {
                     Text(book.review)
                 }.frame(minHeight: 100)
