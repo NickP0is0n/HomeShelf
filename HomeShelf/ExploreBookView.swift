@@ -81,7 +81,7 @@ struct ExploreBookView: View {
                         .onTapGesture {
                             reviewEditSheetActivated = true
                         }.sheet(isPresented: $reviewEditSheetActivated) {
-                            ReviewEditView(book: book, isReviewEditActivated: $reviewEditSheetActivated)
+                            ReviewEditView(book: book, review: book.review, isReviewEditActivated: $reviewEditSheetActivated)
                         }
                 }
                 ScrollView {

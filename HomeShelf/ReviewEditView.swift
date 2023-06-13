@@ -11,7 +11,7 @@ struct ReviewEditView: View {
     @EnvironmentObject var manager: DataController
     @Environment(\.managedObjectContext) private var viewContext
     let book: BookEntity
-    @State private var review: String = ""
+    @State var review: String
     @Binding var isReviewEditActivated: Bool
     
     var body: some View {
@@ -53,6 +53,6 @@ struct ReviewEditView: View {
 
 struct ReviewEditView_Previews: PreviewProvider {
     static var previews: some View {
-        ReviewEditView(book: BookEntity(), isReviewEditActivated: .constant(true))
+        ReviewEditView(book: BookEntity(), review: "", isReviewEditActivated: .constant(true))
     }
 }
