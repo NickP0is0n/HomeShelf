@@ -25,10 +25,10 @@ struct ContentView: View {
                     NavigationLink(destination: ContentView()) {
                         Label("Want to read", systemImage: "bookmark")
                     }
-                    NavigationLink(destination: ContentView()) {
+                    NavigationLink(destination: InProgressView()) {
                         Label("In process", systemImage: "arrow.right.circle")
                     }
-                    NavigationLink(destination: ContentView()) {
+                    NavigationLink(destination: FinishedBooksView()) {
                         Label("Finished", systemImage: "book.closed.circle")
                     }
                     NavigationLink(destination: ContentView()) {
