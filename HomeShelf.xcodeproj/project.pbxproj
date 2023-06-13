@@ -27,6 +27,7 @@
 		39ECAFB12A3878F7003F0E35 /* BookEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39ECAFAF2A3878F7003F0E35 /* BookEntity+CoreDataClass.swift */; };
 		39ECAFB22A3878F7003F0E35 /* BookEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39ECAFB02A3878F7003F0E35 /* BookEntity+CoreDataProperties.swift */; };
 		39ECAFB42A387AD6003F0E35 /* FavoriteBooksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39ECAFB32A387AD6003F0E35 /* FavoriteBooksView.swift */; };
+		39ECAFB62A387F6F003F0E35 /* WantToReadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39ECAFB52A387F6F003F0E35 /* WantToReadView.swift */; };
 		39ED86782A33304E001F7580 /* NewBookView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39ED86772A33304E001F7580 /* NewBookView.swift */; };
 /* End PBXBuildFile section */
 
@@ -72,6 +73,7 @@
 		39ECAFAF2A3878F7003F0E35 /* BookEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BookEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
 		39ECAFB02A3878F7003F0E35 /* BookEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BookEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		39ECAFB32A387AD6003F0E35 /* FavoriteBooksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteBooksView.swift; sourceTree = "<group>"; };
+		39ECAFB52A387F6F003F0E35 /* WantToReadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WantToReadView.swift; sourceTree = "<group>"; };
 		39ED86772A33304E001F7580 /* NewBookView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewBookView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -142,6 +144,7 @@
 				3930D94A2A38720E00027A95 /* InProgressView.swift */,
 				3930D94C2A3872B800027A95 /* FinishedBooksView.swift */,
 				39ECAFB32A387AD6003F0E35 /* FavoriteBooksView.swift */,
+				39ECAFB52A387F6F003F0E35 /* WantToReadView.swift */,
 			);
 			path = HomeShelf;
 			sourceTree = "<group>";
@@ -312,6 +315,7 @@
 				3930D94D2A3872B800027A95 /* FinishedBooksView.swift in Sources */,
 				39ECAFB12A3878F7003F0E35 /* BookEntity+CoreDataClass.swift in Sources */,
 				39B118A62A31D9DB007BAA63 /* ContentView.swift in Sources */,
+				39ECAFB62A387F6F003F0E35 /* WantToReadView.swift in Sources */,
 				39ECAFB42A387AD6003F0E35 /* FavoriteBooksView.swift in Sources */,
 				39B118A42A31D9DB007BAA63 /* HomeShelfApp.swift in Sources */,
 				391849862A370A1000E34E4D /* ExploreBookView.swift in Sources */,

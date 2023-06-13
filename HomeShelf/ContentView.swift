@@ -22,7 +22,7 @@ struct ContentView: View {
                     NavigationLink(destination: AllBooksView()) {
                         Label("All", systemImage: "book")
                     }
-                    NavigationLink(destination: ContentView()) {
+                    NavigationLink(destination: WantToReadView()) {
                         Label("Want to read", systemImage: "bookmark")
                     }
                     NavigationLink(destination: InProgressView()) {
