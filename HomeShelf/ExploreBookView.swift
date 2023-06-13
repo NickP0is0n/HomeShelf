@@ -9,6 +9,8 @@ import SwiftUI
 
 struct ExploreBookView: View {
     @ObservedObject var book: BookEntity
+    @EnvironmentObject var manager: DataController
+    @Environment(\.managedObjectContext) private var viewContext
     @State var progressEditSheetActivated = false
     @State var reviewEditSheetActivated = false
     
@@ -21,10 +23,26 @@ struct ExploreBookView: View {
                     .clipped()
                     .frame(maxWidth: 300, maxHeight: .infinity)
                 VStack(alignment: .leading, spacing: 8) {
-                    Text(book.title)
-                        .font(.title)
-                        .fontWeight(.bold)
-                        .padding(.top)
+                    HStack() {
+                        Text(book.title)
+                            .font(.title)
+                            .fontWeight(.bold)
+                            .padding(.top)
+                        if (book.isFavorite) {
+                            Image(systemName: "heart.fill")
+                                .onTapGesture {
+                                    book.isFavorite = false
+                                    saveBook()
+                                }.padding(.top)
+                        }
+                        else {
+                            Image(systemName: "heart")
+                                .onTapGesture {
+                                    book.isFavorite = true
+                                    saveBook()
+                                }.padding(.top)
+                        }
+                    }
                     Text(book.author)
                     VStack(alignment: .leading, spacing: 1) {
                         BookRatingView(book: book)
@@ -75,6 +93,16 @@ struct ExploreBookView: View {
     
     private func updateProgressButtonAction() {
         progressEditSheetActivated = true
+    }
+    
+    private func saveBook() {
+        do {
+            try viewContext.save()
+        } catch {
+            viewContext.rollback()
+            let nserror = error as NSError
+            fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
+        }
     }
 }
 

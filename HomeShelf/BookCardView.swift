@@ -16,9 +16,16 @@ struct BookCardView: View {
                 .resizable()
                 .frame(width: 105, height: 160)
                 .padding()
-            Text(book.title)
-                .font(.headline)
-                .padding(.leading)
+            if (book.isFavorite) {
+                Text("\(book.title) 􀊵")
+                    .font(.headline)
+                    .padding(.leading)
+            }
+            else {
+                Text(book.title)
+                    .font(.headline)
+                    .padding(.leading)
+            }
             Text(book.author)
                 .font(.body)
                 .padding([.leading, .bottom])

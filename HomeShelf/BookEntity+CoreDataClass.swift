@@ -2,7 +2,7 @@
 //  BookEntity+CoreDataClass.swift
 //  HomeShelf
 //
-//  Created by Mykola Chaikovskyi on 12.06.2023.
+//  Created by Mykola Chaikovskyi on 13.06.2023.
 //
 //
 

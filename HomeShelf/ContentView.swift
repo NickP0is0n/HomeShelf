@@ -40,8 +40,8 @@ struct ContentView: View {
                     .font(.subheadline)
                     .fontWeight(.semibold)
                 Group {
-                    NavigationLink(destination: ContentView()) {
-                        Label("Favorites", systemImage: "star")
+                    NavigationLink(destination: FavoriteBooksView()) {
+                        Label("Favorite books", systemImage: "star")
                     }
                     NavigationLink(destination: ContentView()) {
                         Label("New list", systemImage: "plus")

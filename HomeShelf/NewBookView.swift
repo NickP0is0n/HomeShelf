@@ -87,6 +87,7 @@ struct NewBookView: View {
         newBookEntity.pageCount = Int16(pageCountText) ?? 0
         newBookEntity.storeUrl = storeLinkText
         newBookEntity.progress = 0
+        newBookEntity.isFavorite = false
         do {
             try viewContext.save()
         } catch {
