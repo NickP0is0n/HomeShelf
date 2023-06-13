@@ -32,7 +32,7 @@ struct ExploreBookView: View {
                             .font(.subheadline)
                     }
                     ProgressView(value: Float(book.progress), total: Float(book.pageCount)) {
-                        Text("\(Int(book.progress / (book.pageCount / 100)))% of the book completed.")
+                        Text("\(Int(Double(book.progress) / (Double(book.pageCount) / 100)))% of the book completed.")
                             .font(.subheadline)
                      }
                     HStack {
