@@ -3,7 +3,7 @@
     <entity name="BookEntity" representedClassName=".BookEntity" syncable="YES">
         <attribute name="author" optional="YES" attributeType="String"/>
         <attribute name="cover" optional="YES" attributeType="Binary" allowsExternalBinaryDataStorage="YES"/>
-        <attribute name="inUserList" optional="YES" attributeType="Transformable"/>
+        <attribute name="inUserList" optional="YES" attributeType="Transformable" valueTransformerName="NSSecureUnarchiveFromData"/>
         <attribute name="isFavorite" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="loanedTo" optional="YES" attributeType="String"/>
         <attribute name="pageCount" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
