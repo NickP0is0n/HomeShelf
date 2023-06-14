@@ -36,9 +36,11 @@ struct AllBooksView: View {
             ScrollView {
                 LazyVGrid(columns: columns, spacing: 20) {
                     ForEach(bookEntities) { bookEntity in
-                        BookCardView(book: bookEntity).onTapGesture {
+                        Button(action: {
                             bookSelected = bookEntity
-                        }
+                        }) {
+                            BookCardView(book: bookEntity)
+                        }.buttonStyle(.plain)
                     }
                 }.background(.background)
             }

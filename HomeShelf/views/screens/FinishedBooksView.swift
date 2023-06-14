@@ -34,9 +34,11 @@ struct FinishedBooksView: View {
                 LazyVGrid(columns: columns, spacing: 20) {
                     ForEach(bookEntities) { bookEntity in
                         if (bookEntity.progress == bookEntity.pageCount) {
-                            BookCardView(book: bookEntity).onTapGesture {
+                            Button(action: {
                                 bookSelected = bookEntity
-                            }
+                            }) {
+                                BookCardView(book: bookEntity)
+                            }.buttonStyle(.plain)
                         }
                     }
                 }.background(.background)

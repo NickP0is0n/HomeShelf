@@ -35,9 +35,11 @@ struct LoanedBooksListView: View {
                     ForEach(bookEntities) { bookEntity in
                         if (!bookEntity.loanedTo.isEmpty) {
                             VStack(alignment: .leading, spacing:0) {
-                                BookCardView(book: bookEntity).onTapGesture {
+                                Button(action: {
                                     bookSelected = bookEntity
-                                }
+                                }) {
+                                    BookCardView(book: bookEntity)
+                                }.buttonStyle(.plain)
                                 Text("Loaned to \(bookEntity.loanedTo)")
                                     .fontWeight(.bold)
                                     .padding(.leading)

@@ -35,9 +35,11 @@ struct UserListView: View {
                 LazyVGrid(columns: columns, spacing: 20) {
                     ForEach(bookEntities) { bookEntity in
                         if (bookEntity.inUserList.contains(listName)) {
-                            BookCardView(book: bookEntity).onTapGesture {
+                            Button(action: {
                                 bookSelected = bookEntity
-                            }
+                            }) {
+                                BookCardView(book: bookEntity)
+                            }.buttonStyle(.plain)
                         }
                     }
                 }
