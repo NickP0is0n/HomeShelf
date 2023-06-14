@@ -2,7 +2,7 @@
 //  BookEntity+CoreDataProperties.swift
 //  HomeShelf
 //
-//  Created by Mykola Chaikovskyi on 13.06.2023.
+//  Created by Mykola Chaikovskyi on 14.06.2023.
 //
 //
 
@@ -18,13 +18,14 @@ extension BookEntity {
 
     @NSManaged public var author: String
     @NSManaged public var cover: Data
+    @NSManaged public var isFavorite: Bool
     @NSManaged public var pageCount: Int16
     @NSManaged public var progress: Int16
     @NSManaged public var rating: Int16
     @NSManaged public var review: String
     @NSManaged public var storeUrl: String
     @NSManaged public var title: String
-    @NSManaged public var isFavorite: Bool
+    @NSManaged public var loanedTo: String
 
 }
 

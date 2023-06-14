@@ -14,6 +14,9 @@
 		3930D9492A38673C00027A95 /* ReviewEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3930D9482A38673C00027A95 /* ReviewEditView.swift */; };
 		3930D94B2A38720E00027A95 /* InProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3930D94A2A38720E00027A95 /* InProgressView.swift */; };
 		3930D94D2A3872B800027A95 /* FinishedBooksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3930D94C2A3872B800027A95 /* FinishedBooksView.swift */; };
+		3936EEA32A39A4B000FB2144 /* BookEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3936EEA12A39A4B000FB2144 /* BookEntity+CoreDataClass.swift */; };
+		3936EEA42A39A4B000FB2144 /* BookEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3936EEA22A39A4B000FB2144 /* BookEntity+CoreDataProperties.swift */; };
+		3936EEA62A39A63F00FB2144 /* LoanBookView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3936EEA52A39A63F00FB2144 /* LoanBookView.swift */; };
 		394B41CA2A31E65600FB3797 /* AllBooksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 394B41C92A31E65600FB3797 /* AllBooksView.swift */; };
 		394CC9F62A37829200994E32 /* ProgressEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 394CC9F52A37829200994E32 /* ProgressEditView.swift */; };
 		39B118A42A31D9DB007BAA63 /* HomeShelfApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39B118A32A31D9DB007BAA63 /* HomeShelfApp.swift */; };
@@ -24,8 +27,6 @@
 		39B118C02A31D9DE007BAA63 /* HomeShelfUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39B118BF2A31D9DE007BAA63 /* HomeShelfUITests.swift */; };
 		39B118C22A31D9DE007BAA63 /* HomeShelfUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39B118C12A31D9DE007BAA63 /* HomeShelfUITestsLaunchTests.swift */; };
 		39EA02FB2A35B99F00C2EFA2 /* BookCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39EA02FA2A35B99F00C2EFA2 /* BookCardView.swift */; };
-		39ECAFB12A3878F7003F0E35 /* BookEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39ECAFAF2A3878F7003F0E35 /* BookEntity+CoreDataClass.swift */; };
-		39ECAFB22A3878F7003F0E35 /* BookEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39ECAFB02A3878F7003F0E35 /* BookEntity+CoreDataProperties.swift */; };
 		39ECAFB42A387AD6003F0E35 /* FavoriteBooksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39ECAFB32A387AD6003F0E35 /* FavoriteBooksView.swift */; };
 		39ECAFB62A387F6F003F0E35 /* WantToReadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39ECAFB52A387F6F003F0E35 /* WantToReadView.swift */; };
 		39ED86782A33304E001F7580 /* NewBookView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39ED86772A33304E001F7580 /* NewBookView.swift */; };
@@ -56,6 +57,9 @@
 		3930D9482A38673C00027A95 /* ReviewEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewEditView.swift; sourceTree = "<group>"; };
 		3930D94A2A38720E00027A95 /* InProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InProgressView.swift; sourceTree = "<group>"; };
 		3930D94C2A3872B800027A95 /* FinishedBooksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinishedBooksView.swift; sourceTree = "<group>"; };
+		3936EEA12A39A4B000FB2144 /* BookEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BookEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
+		3936EEA22A39A4B000FB2144 /* BookEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BookEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		3936EEA52A39A63F00FB2144 /* LoanBookView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoanBookView.swift; sourceTree = "<group>"; };
 		394B41C92A31E65600FB3797 /* AllBooksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllBooksView.swift; sourceTree = "<group>"; };
 		394CC9F52A37829200994E32 /* ProgressEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressEditView.swift; sourceTree = "<group>"; };
 		39B118A02A31D9DB007BAA63 /* HomeShelf.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HomeShelf.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -70,8 +74,6 @@
 		39B118BF2A31D9DE007BAA63 /* HomeShelfUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeShelfUITests.swift; sourceTree = "<group>"; };
 		39B118C12A31D9DE007BAA63 /* HomeShelfUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeShelfUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		39EA02FA2A35B99F00C2EFA2 /* BookCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookCardView.swift; sourceTree = "<group>"; };
-		39ECAFAF2A3878F7003F0E35 /* BookEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BookEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
-		39ECAFB02A3878F7003F0E35 /* BookEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BookEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		39ECAFB32A387AD6003F0E35 /* FavoriteBooksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteBooksView.swift; sourceTree = "<group>"; };
 		39ECAFB52A387F6F003F0E35 /* WantToReadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WantToReadView.swift; sourceTree = "<group>"; };
 		39ED86772A33304E001F7580 /* NewBookView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewBookView.swift; sourceTree = "<group>"; };
@@ -125,8 +127,8 @@
 		39B118A22A31D9DB007BAA63 /* HomeShelf */ = {
 			isa = PBXGroup;
 			children = (
-				39ECAFAF2A3878F7003F0E35 /* BookEntity+CoreDataClass.swift */,
-				39ECAFB02A3878F7003F0E35 /* BookEntity+CoreDataProperties.swift */,
+				3936EEA12A39A4B000FB2144 /* BookEntity+CoreDataClass.swift */,
+				3936EEA22A39A4B000FB2144 /* BookEntity+CoreDataProperties.swift */,
 				39B118A32A31D9DB007BAA63 /* HomeShelfApp.swift */,
 				39B118A52A31D9DB007BAA63 /* ContentView.swift */,
 				39B118A72A31D9DD007BAA63 /* Assets.xcassets */,
@@ -145,6 +147,7 @@
 				3930D94C2A3872B800027A95 /* FinishedBooksView.swift */,
 				39ECAFB32A387AD6003F0E35 /* FavoriteBooksView.swift */,
 				39ECAFB52A387F6F003F0E35 /* WantToReadView.swift */,
+				3936EEA52A39A63F00FB2144 /* LoanBookView.swift */,
 			);
 			path = HomeShelf;
 			sourceTree = "<group>";
@@ -309,18 +312,19 @@
 				39EA02FB2A35B99F00C2EFA2 /* BookCardView.swift in Sources */,
 				39ED86782A33304E001F7580 /* NewBookView.swift in Sources */,
 				3930D94B2A38720E00027A95 /* InProgressView.swift in Sources */,
+				3936EEA32A39A4B000FB2144 /* BookEntity+CoreDataClass.swift in Sources */,
 				390FE1302A34715000E3A84E /* DataController.swift in Sources */,
 				3930D9492A38673C00027A95 /* ReviewEditView.swift in Sources */,
 				394CC9F62A37829200994E32 /* ProgressEditView.swift in Sources */,
 				3930D94D2A3872B800027A95 /* FinishedBooksView.swift in Sources */,
-				39ECAFB12A3878F7003F0E35 /* BookEntity+CoreDataClass.swift in Sources */,
 				39B118A62A31D9DB007BAA63 /* ContentView.swift in Sources */,
+				3936EEA62A39A63F00FB2144 /* LoanBookView.swift in Sources */,
+				3936EEA42A39A4B000FB2144 /* BookEntity+CoreDataProperties.swift in Sources */,
 				39ECAFB62A387F6F003F0E35 /* WantToReadView.swift in Sources */,
 				39ECAFB42A387AD6003F0E35 /* FavoriteBooksView.swift in Sources */,
 				39B118A42A31D9DB007BAA63 /* HomeShelfApp.swift in Sources */,
 				391849862A370A1000E34E4D /* ExploreBookView.swift in Sources */,
 				394B41CA2A31E65600FB3797 /* AllBooksView.swift in Sources */,
-				39ECAFB22A3878F7003F0E35 /* BookEntity+CoreDataProperties.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

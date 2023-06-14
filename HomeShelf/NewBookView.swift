@@ -88,6 +88,7 @@ struct NewBookView: View {
         newBookEntity.storeUrl = storeLinkText
         newBookEntity.progress = 0
         newBookEntity.isFavorite = false
+        newBookEntity.loanedTo = ""
         do {
             try viewContext.save()
         } catch {

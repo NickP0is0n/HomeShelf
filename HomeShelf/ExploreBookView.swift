@@ -13,6 +13,7 @@ struct ExploreBookView: View {
     @Environment(\.managedObjectContext) private var viewContext
     @State var progressEditSheetActivated = false
     @State var reviewEditSheetActivated = false
+    @State var bookLoanSheetActivated = false
     
     var body: some View {
         VStack(alignment: .leading) {
@@ -44,6 +45,10 @@ struct ExploreBookView: View {
                         }
                     }
                     Text(book.author)
+                    if (!book.loanedTo.isEmpty) {
+                        Text("Loaned to \(book.loanedTo)")
+                            .fontWeight(.bold)
+                    }
                     VStack(alignment: .leading, spacing: 1) {
                         BookRatingView(book: book)
                         Text("My rating")
@@ -64,10 +69,15 @@ struct ExploreBookView: View {
                         }) {
                             Text("Add to list")
                         }
-                        Button(action: {
-                            
-                        }) {
-                            Text("Loan book")
+                        Button(action: loanBookButtonAction) {
+                            if (book.loanedTo.isEmpty) {
+                                Text("Loan book")
+                            }
+                            else {
+                                Text("Return book")
+                            }
+                        }.sheet(isPresented: $bookLoanSheetActivated) {
+                            LoanBookView(loanBookSheetActivated: $bookLoanSheetActivated, book: book)
                         }
                     }.padding(.top)
                 }.frame(maxWidth: .infinity, maxHeight: .infinity)
@@ -93,6 +103,16 @@ struct ExploreBookView: View {
     
     private func updateProgressButtonAction() {
         progressEditSheetActivated = true
+    }
+    
+    private func loanBookButtonAction() {
+        if (book.loanedTo.isEmpty) {
+            bookLoanSheetActivated = true
+        }
+        else {
+            book.loanedTo = ""
+            saveBook()
+        }
     }
     
     private func saveBook() {
