@@ -63,11 +63,11 @@ struct NewBookView: View {
                     Spacer()
                     Button(action: cancelButtonAction) {
                         Text("Cancel")
-                    }
+                    }.keyboardShortcut(.cancelAction)
                     .padding([.leading, .bottom])
                     Button(action: okButtonAction) {
                         Text("OK")
-                    }
+                    }.keyboardShortcut(.defaultAction)
                     .padding([.bottom, .trailing])
                 }
             }.frame(width: 400)

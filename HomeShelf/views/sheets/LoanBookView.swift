@@ -29,10 +29,10 @@ struct LoanBookView: View {
             HStack {
                 Button(action: okButtonAction, label: {
                     Text("OK")
-                })
+                }).keyboardShortcut(.defaultAction)
                 Button(action: cancelButtonAction, label: {
                     Text("Cancel")
-                })
+                }).keyboardShortcut(.cancelAction)
             }.padding()
         }.frame(minWidth: 200)
         
