@@ -12,4 +12,7 @@
         <attribute name="storeUrl" optional="YES" attributeType="String"/>
         <attribute name="title" optional="YES" attributeType="String"/>
     </entity>
+    <entity name="UserListEntity" representedClassName=".UserListEntity" syncable="YES">
+        <attribute name="listName" optional="YES" attributeType="String"/>
+    </entity>
 </model>

@@ -11,6 +11,7 @@ struct ContentView: View {
     
     @EnvironmentObject var manager: DataController
     @Environment(\.managedObjectContext) private var viewContext
+    @FetchRequest(sortDescriptors: []) private var userListEntities: FetchedResults<UserListEntity>
    
     var body: some View {
         NavigationView {
@@ -43,9 +44,14 @@ struct ContentView: View {
                     NavigationLink(destination: FavoriteBooksView()) {
                         Label("Favorite books", systemImage: "star")
                     }
-                    NavigationLink(destination: ContentView()) {
-                        Label("New list", systemImage: "plus")
+                    ForEach(userListEntities) { userList in
+                        NavigationLink(destination: UserListView(listName: userList.listName)) {
+                            Label(userList.listName, systemImage: "list.bullet")
+                        }
                     }
+                    NavigationLink(destination: NewListView()) {
+                        Label("New list", systemImage: "plus")
+                        }
                 }
             }
             .listStyle(SidebarListStyle())
