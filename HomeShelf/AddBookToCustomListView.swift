@@ -37,7 +37,7 @@ struct AddBookToCustomListView: View {
                             }
                         ))
                     }
-                }
+                }.padding()
             }
             
             HStack {
