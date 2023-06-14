@@ -26,7 +26,7 @@ struct NewBookView: View {
                 .fontWeight(.bold)
                 .padding(.top)
             Divider()
-            HStack {
+            VStack(alignment: .leading) {
                 Form {
                     TextField("Title", text: $titleFieldText)
                         .padding(.bottom)
@@ -36,24 +36,28 @@ struct NewBookView: View {
                         .padding(.bottom)
                     TextField("Store link", text: $storeLinkText)
                         .padding(.bottom)
-                    HStack {
-                        Text("Cover")
-                            .padding(.trailing)
-                        Button(action: imageSelectButtonAction) {
-                            Text("Browse...")
-                        }
-                        if (coverPictureFilename != "") {
-                            Image(nsImage: NSImage.init(byReferencingFile: coverPictureFilename)!)
-                                .resizable()
-                                .frame(width: 50, height: 75).cornerRadius(9)
-                        }
-                        else {
-                            Rectangle()
-                                .frame(width: 50, height: 75).cornerRadius(9)
-                        }
-                    }
-                    
                 }.padding(.top).frame(width: 270)
+                HStack {
+                    Text("Cover")
+                        .padding(.leading)
+                    if (coverPictureFilename != "") {
+                        Image(nsImage: NSImage.init(byReferencingFile: coverPictureFilename)!)
+                            .resizable()
+                            .frame(width: 50, height: 75).cornerRadius(9)
+                            .onTapGesture {
+                                imageSelectButtonAction()
+                            }
+                            .padding(.leading)
+                    }
+                    else {
+                        Rectangle()
+                            .frame(width: 50, height: 75).cornerRadius(9)
+                            .onTapGesture {
+                                imageSelectButtonAction()
+                            }
+                            .padding(.leading)
+                    }
+                }
             }
                 HStack {
                     Spacer()
