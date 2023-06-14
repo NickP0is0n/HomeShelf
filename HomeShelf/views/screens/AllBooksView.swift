@@ -51,7 +51,7 @@ struct AllBooksView: View {
                         Image(systemName: "plus.app")
                     }).sheet(isPresented: $addBookSheetActivated) {
                         NewBookView(addBookSheetActivated: $addBookSheetActivated)
-                    }
+                    }.keyboardShortcut("n")
                 }
             }
         }

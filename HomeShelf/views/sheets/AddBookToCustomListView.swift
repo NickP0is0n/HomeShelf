@@ -43,10 +43,10 @@ struct AddBookToCustomListView: View {
             HStack {
                 Button(action: okButtonAction) {
                     Text("OK")
-                }
+                }.keyboardShortcut(.defaultAction)
                 Button(action: cancelButtonAction) {
                     Text("Cancel")
-                }
+                }.keyboardShortcut(.cancelAction)
             }.padding()
         }.frame(minWidth: 200, minHeight: 200)
             .onAppear {
