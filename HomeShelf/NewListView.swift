@@ -18,16 +18,18 @@ struct NewListView: View {
                     .font(.largeTitle)
                     .fontWeight(.bold)
                     .padding()
-                Divider()
                 HStack {
+                    Text("Name")
+                        .fontWeight(.bold)
                     TextField(text: $listName) {
-                        Text("List name")
-                    }
+                        Text("")
+                    }.font(.title2)
                 }.padding([.leading, .trailing, .top])
                 HStack {
+                    Spacer()
                     Button(action: okButtonAction, label: {
                         Text("Save")
-                    })
+                    }).buttonStyle(.borderedProminent)
                 }.padding()
                 Spacer()
             }
