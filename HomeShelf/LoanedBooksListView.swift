@@ -1,13 +1,13 @@
 //
-//  FavoriteBooksView.swift
+//  LoanedBooksListView.swift
 //  HomeShelf
 //
-//  Created by Mykola Chaikovskyi on 13.06.2023.
+//  Created by Mykola Chaikovskyi on 14.06.2023.
 //
 
 import SwiftUI
 
-struct FavoriteBooksView: View {
+struct LoanedBooksListView: View {
     @FetchRequest(sortDescriptors: []) private var bookEntities: FetchedResults<BookEntity>
     @State var bookSelected: BookEntity? = nil
     
@@ -33,9 +33,13 @@ struct FavoriteBooksView: View {
             ScrollView {
                 LazyVGrid(columns: columns, spacing: 20) {
                     ForEach(bookEntities) { bookEntity in
-                        if (bookEntity.isFavorite) {
-                            BookCardView(book: bookEntity).onTapGesture {
-                                bookSelected = bookEntity
+                        if (!bookEntity.loanedTo.isEmpty) {
+                            VStack(spacing:0) {
+                                BookCardView(book: bookEntity).onTapGesture {
+                                    bookSelected = bookEntity
+                                }
+                                Text("Loaned to \(bookEntity.loanedTo)")
+                                    .fontWeight(.bold)
                             }
                         }
                     }
@@ -46,8 +50,8 @@ struct FavoriteBooksView: View {
     }
 }
 
-struct FavoriteBooksView_Previews: PreviewProvider {
+struct LoanedBooksListView_Previews: PreviewProvider {
     static var previews: some View {
-        FavoriteBooksView()
+        LoanedBooksListView()
     }
 }

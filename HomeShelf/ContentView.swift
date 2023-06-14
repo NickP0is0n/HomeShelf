@@ -31,7 +31,7 @@ struct ContentView: View {
                     NavigationLink(destination: FinishedBooksView()) {
                         Label("Finished", systemImage: "book.closed.circle")
                     }
-                    NavigationLink(destination: ContentView()) {
+                    NavigationLink(destination: LoanedBooksListView()) {
                         Label("Loaned", systemImage: "person.badge.clock")
                     }
                 }
