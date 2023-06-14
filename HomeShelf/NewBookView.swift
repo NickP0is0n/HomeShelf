@@ -89,6 +89,7 @@ struct NewBookView: View {
         newBookEntity.progress = 0
         newBookEntity.isFavorite = false
         newBookEntity.loanedTo = ""
+        newBookEntity.inUserList = []
         do {
             try viewContext.save()
         } catch {

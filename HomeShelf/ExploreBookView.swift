@@ -11,9 +11,11 @@ struct ExploreBookView: View {
     @ObservedObject var book: BookEntity
     @EnvironmentObject var manager: DataController
     @Environment(\.managedObjectContext) private var viewContext
+    @FetchRequest(sortDescriptors: []) private var userListEntities: FetchedResults<UserListEntity>
     @State var progressEditSheetActivated = false
     @State var reviewEditSheetActivated = false
     @State var bookLoanSheetActivated = false
+    @State var addBookToListSheetActivated = false
     
     var body: some View {
         VStack(alignment: .leading) {
@@ -64,10 +66,10 @@ struct ExploreBookView: View {
                         }.sheet(isPresented: $progressEditSheetActivated) {
                             ProgressEditView(progressEditSheetActivated: $progressEditSheetActivated, book: book)
                         }
-                        Button(action: {
-                            
-                        }) {
+                        Button(action: addBookToListButtonAction) {
                             Text("Add to list")
+                        }.sheet(isPresented: $addBookToListSheetActivated) {
+                            AddBookToCustomListView(book: book, dataModel: userListEntities.convertToToggleDataModel(), isBookListEditorActivated: $addBookToListSheetActivated)
                         }
                         Button(action: loanBookButtonAction) {
                             if (book.loanedTo.isEmpty) {
@@ -99,6 +101,10 @@ struct ExploreBookView: View {
                 }.frame(minHeight: 100)
             }.padding()
         }.padding().background(.background)
+    }
+    
+    private func addBookToListButtonAction() {
+        addBookToListSheetActivated = true
     }
     
     private func updateProgressButtonAction() {

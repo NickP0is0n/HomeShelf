@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		390BE47F2A3A29B2004B1716 /* BookEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 390BE47B2A3A29B2004B1716 /* BookEntity+CoreDataClass.swift */; };
+		390BE4802A3A29B2004B1716 /* BookEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 390BE47C2A3A29B2004B1716 /* BookEntity+CoreDataProperties.swift */; };
+		390BE4812A3A29B2004B1716 /* UserListEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 390BE47D2A3A29B2004B1716 /* UserListEntity+CoreDataClass.swift */; };
+		390BE4822A3A29B2004B1716 /* UserListEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 390BE47E2A3A29B2004B1716 /* UserListEntity+CoreDataProperties.swift */; };
+		390BE4842A3A2B2E004B1716 /* AddBookToCustomListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 390BE4832A3A2B2E004B1716 /* AddBookToCustomListView.swift */; };
 		390FE1082A34694700E3A84E /* LibraryDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 390FE1062A34694700E3A84E /* LibraryDataModel.xcdatamodeld */; };
 		390FE1302A34715000E3A84E /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 390FE12F2A34715000E3A84E /* DataController.swift */; };
 		391849842A3707D700E34E4D /* BookRatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 391849832A3707D700E34E4D /* BookRatingView.swift */; };
@@ -16,14 +21,11 @@
 		3930D94D2A3872B800027A95 /* FinishedBooksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3930D94C2A3872B800027A95 /* FinishedBooksView.swift */; };
 		3936EEA62A39A63F00FB2144 /* LoanBookView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3936EEA52A39A63F00FB2144 /* LoanBookView.swift */; };
 		3936EEA82A39A9C600FB2144 /* LoanedBooksListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3936EEA72A39A9C600FB2144 /* LoanedBooksListView.swift */; };
-		3936EEAD2A39C60300FB2144 /* UserListEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3936EEA92A39C60300FB2144 /* UserListEntity+CoreDataClass.swift */; };
-		3936EEAE2A39C60300FB2144 /* UserListEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3936EEAA2A39C60300FB2144 /* UserListEntity+CoreDataProperties.swift */; };
-		3936EEAF2A39C60300FB2144 /* BookEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3936EEAB2A39C60300FB2144 /* BookEntity+CoreDataClass.swift */; };
-		3936EEB02A39C60300FB2144 /* BookEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3936EEAC2A39C60300FB2144 /* BookEntity+CoreDataProperties.swift */; };
 		3936EEB22A39C67E00FB2144 /* UserListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3936EEB12A39C67E00FB2144 /* UserListView.swift */; };
 		3936EEB42A39C7A400FB2144 /* NewListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3936EEB32A39C7A400FB2144 /* NewListView.swift */; };
 		394B41CA2A31E65600FB3797 /* AllBooksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 394B41C92A31E65600FB3797 /* AllBooksView.swift */; };
 		394CC9F62A37829200994E32 /* ProgressEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 394CC9F52A37829200994E32 /* ProgressEditView.swift */; };
+		396EF3482A3A3880007B46C3 /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396EF3472A3A3880007B46C3 /* DataModel.swift */; };
 		39B118A42A31D9DB007BAA63 /* HomeShelfApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39B118A32A31D9DB007BAA63 /* HomeShelfApp.swift */; };
 		39B118A62A31D9DB007BAA63 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39B118A52A31D9DB007BAA63 /* ContentView.swift */; };
 		39B118A82A31D9DD007BAA63 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 39B118A72A31D9DD007BAA63 /* Assets.xcassets */; };
@@ -55,6 +57,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		390BE47B2A3A29B2004B1716 /* BookEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BookEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
+		390BE47C2A3A29B2004B1716 /* BookEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BookEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		390BE47D2A3A29B2004B1716 /* UserListEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserListEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
+		390BE47E2A3A29B2004B1716 /* UserListEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserListEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		390BE4832A3A2B2E004B1716 /* AddBookToCustomListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBookToCustomListView.swift; sourceTree = "<group>"; };
 		390FE1072A34694700E3A84E /* LibraryDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = LibraryDataModel.xcdatamodel; sourceTree = "<group>"; };
 		390FE12F2A34715000E3A84E /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
 		391849832A3707D700E34E4D /* BookRatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookRatingView.swift; sourceTree = "<group>"; };
@@ -64,14 +71,11 @@
 		3930D94C2A3872B800027A95 /* FinishedBooksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinishedBooksView.swift; sourceTree = "<group>"; };
 		3936EEA52A39A63F00FB2144 /* LoanBookView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoanBookView.swift; sourceTree = "<group>"; };
 		3936EEA72A39A9C600FB2144 /* LoanedBooksListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoanedBooksListView.swift; sourceTree = "<group>"; };
-		3936EEA92A39C60300FB2144 /* UserListEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserListEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
-		3936EEAA2A39C60300FB2144 /* UserListEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserListEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		3936EEAB2A39C60300FB2144 /* BookEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BookEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
-		3936EEAC2A39C60300FB2144 /* BookEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BookEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		3936EEB12A39C67E00FB2144 /* UserListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListView.swift; sourceTree = "<group>"; };
 		3936EEB32A39C7A400FB2144 /* NewListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewListView.swift; sourceTree = "<group>"; };
 		394B41C92A31E65600FB3797 /* AllBooksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllBooksView.swift; sourceTree = "<group>"; };
 		394CC9F52A37829200994E32 /* ProgressEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressEditView.swift; sourceTree = "<group>"; };
+		396EF3472A3A3880007B46C3 /* DataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
 		39B118A02A31D9DB007BAA63 /* HomeShelf.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HomeShelf.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		39B118A32A31D9DB007BAA63 /* HomeShelfApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeShelfApp.swift; sourceTree = "<group>"; };
 		39B118A52A31D9DB007BAA63 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -137,10 +141,10 @@
 		39B118A22A31D9DB007BAA63 /* HomeShelf */ = {
 			isa = PBXGroup;
 			children = (
-				3936EEA92A39C60300FB2144 /* UserListEntity+CoreDataClass.swift */,
-				3936EEAA2A39C60300FB2144 /* UserListEntity+CoreDataProperties.swift */,
-				3936EEAB2A39C60300FB2144 /* BookEntity+CoreDataClass.swift */,
-				3936EEAC2A39C60300FB2144 /* BookEntity+CoreDataProperties.swift */,
+				390BE47B2A3A29B2004B1716 /* BookEntity+CoreDataClass.swift */,
+				390BE47C2A3A29B2004B1716 /* BookEntity+CoreDataProperties.swift */,
+				390BE47D2A3A29B2004B1716 /* UserListEntity+CoreDataClass.swift */,
+				390BE47E2A3A29B2004B1716 /* UserListEntity+CoreDataProperties.swift */,
 				39B118A32A31D9DB007BAA63 /* HomeShelfApp.swift */,
 				39B118A52A31D9DB007BAA63 /* ContentView.swift */,
 				39B118A72A31D9DD007BAA63 /* Assets.xcassets */,
@@ -163,6 +167,8 @@
 				3936EEA72A39A9C600FB2144 /* LoanedBooksListView.swift */,
 				3936EEB12A39C67E00FB2144 /* UserListView.swift */,
 				3936EEB32A39C7A400FB2144 /* NewListView.swift */,
+				390BE4832A3A2B2E004B1716 /* AddBookToCustomListView.swift */,
+				396EF3472A3A3880007B46C3 /* DataModel.swift */,
 			);
 			path = HomeShelf;
 			sourceTree = "<group>";
@@ -323,24 +329,26 @@
 			buildActionMask = 2147483647;
 			files = (
 				391849842A3707D700E34E4D /* BookRatingView.swift in Sources */,
+				390BE4812A3A29B2004B1716 /* UserListEntity+CoreDataClass.swift in Sources */,
 				390FE1082A34694700E3A84E /* LibraryDataModel.xcdatamodeld in Sources */,
 				39EA02FB2A35B99F00C2EFA2 /* BookCardView.swift in Sources */,
-				3936EEAD2A39C60300FB2144 /* UserListEntity+CoreDataClass.swift in Sources */,
+				390BE4822A3A29B2004B1716 /* UserListEntity+CoreDataProperties.swift in Sources */,
+				396EF3482A3A3880007B46C3 /* DataModel.swift in Sources */,
 				39ED86782A33304E001F7580 /* NewBookView.swift in Sources */,
 				3930D94B2A38720E00027A95 /* InProgressView.swift in Sources */,
 				390FE1302A34715000E3A84E /* DataController.swift in Sources */,
 				3936EEB22A39C67E00FB2144 /* UserListView.swift in Sources */,
 				3936EEB42A39C7A400FB2144 /* NewListView.swift in Sources */,
+				390BE4802A3A29B2004B1716 /* BookEntity+CoreDataProperties.swift in Sources */,
 				3930D9492A38673C00027A95 /* ReviewEditView.swift in Sources */,
-				3936EEB02A39C60300FB2144 /* BookEntity+CoreDataProperties.swift in Sources */,
 				394CC9F62A37829200994E32 /* ProgressEditView.swift in Sources */,
 				3930D94D2A3872B800027A95 /* FinishedBooksView.swift in Sources */,
 				39B118A62A31D9DB007BAA63 /* ContentView.swift in Sources */,
 				3936EEA62A39A63F00FB2144 /* LoanBookView.swift in Sources */,
+				390BE47F2A3A29B2004B1716 /* BookEntity+CoreDataClass.swift in Sources */,
+				390BE4842A3A2B2E004B1716 /* AddBookToCustomListView.swift in Sources */,
 				3936EEA82A39A9C600FB2144 /* LoanedBooksListView.swift in Sources */,
-				3936EEAF2A39C60300FB2144 /* BookEntity+CoreDataClass.swift in Sources */,
 				39ECAFB62A387F6F003F0E35 /* WantToReadView.swift in Sources */,
-				3936EEAE2A39C60300FB2144 /* UserListEntity+CoreDataProperties.swift in Sources */,
 				39ECAFB42A387AD6003F0E35 /* FavoriteBooksView.swift in Sources */,
 				39B118A42A31D9DB007BAA63 /* HomeShelfApp.swift in Sources */,
 				391849862A370A1000E34E4D /* ExploreBookView.swift in Sources */,
