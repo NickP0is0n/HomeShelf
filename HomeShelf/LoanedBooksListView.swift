@@ -45,7 +45,7 @@ struct LoanedBooksListView: View {
                     }
                 }.background(.background)
             }
-            .navigationTitle("Favorite books")
+            .navigationTitle("Loaned books")
         }
     }
 }
