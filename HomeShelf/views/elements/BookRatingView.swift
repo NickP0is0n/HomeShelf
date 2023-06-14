@@ -16,16 +16,20 @@ struct BookRatingView: View {
         HStack {
             ForEach(1..<6) { i in
                 if (i <= Int(book.rating)) {
-                    Image(systemName: "star.fill").onTapGesture {
+                    Button(action: {
                         book.rating = Int16(i)
                         saveBook()
-                    }
+                    }) {
+                        Image(systemName: "star.fill")
+                    }.buttonStyle(.plain)
                 }
                 else {
-                    Image(systemName: "star").onTapGesture {
+                    Button(action: {
                         book.rating = Int16(i)
                         saveBook()
-                    }
+                    }) {
+                        Image(systemName: "star")
+                    }.buttonStyle(.plain)
                 }
             }
         }

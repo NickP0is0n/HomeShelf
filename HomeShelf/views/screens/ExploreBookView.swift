@@ -32,18 +32,22 @@ struct ExploreBookView: View {
                             .fontWeight(.bold)
                             .padding(.top)
                         if (book.isFavorite) {
-                            Image(systemName: "heart.fill")
-                                .onTapGesture {
-                                    book.isFavorite = false
-                                    saveBook()
-                                }.padding(.top)
+                            Button(action: {
+                                book.isFavorite = false
+                                saveBook()
+                            }) {
+                                Image(systemName: "heart.fill")
+                                    .padding(.top)
+                            }.buttonStyle(.plain)
                         }
                         else {
-                            Image(systemName: "heart")
-                                .onTapGesture {
-                                    book.isFavorite = true
-                                    saveBook()
-                                }.padding(.top)
+                            Button(action: {
+                                book.isFavorite = true
+                                saveBook()
+                            }) {
+                                Image(systemName: "heart")
+                                    .padding(.top)
+                            }.buttonStyle(.plain)
                         }
                     }
                     Text(book.author)
@@ -89,10 +93,12 @@ struct ExploreBookView: View {
                     Text("My review and thoughts")
                         .font(.title)
                         .fontWeight(.bold)
-                    Image(systemName: "pencil")
-                        .onTapGesture {
-                            reviewEditSheetActivated = true
-                        }.sheet(isPresented: $reviewEditSheetActivated) {
+                    Button(action: {
+                        reviewEditSheetActivated = true
+                    }) {
+                        Image(systemName: "pencil")
+                    }.buttonStyle(.plain)
+                        .sheet(isPresented: $reviewEditSheetActivated) {
                             ReviewEditView(book: book, review: book.review, isReviewEditActivated: $reviewEditSheetActivated)
                         }
                 }
