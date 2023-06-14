@@ -39,7 +39,7 @@ struct FavoriteBooksView: View {
                             }
                         }
                     }
-                }.background(.background)
+                }
             }
             .navigationTitle("Favorite books")
         }

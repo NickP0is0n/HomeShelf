@@ -20,19 +20,24 @@ struct ContentView: View {
                     .font(.subheadline)
                     .fontWeight(.semibold)
                 Group {
-                    NavigationLink(destination: AllBooksView()) {
+                    NavigationLink(destination: AllBooksView()
+                        .background(.background)) {
                         Label("All", systemImage: "book")
                     }
-                    NavigationLink(destination: WantToReadView()) {
+                    NavigationLink(destination: WantToReadView()
+                        .background(.background)) {
                         Label("Want to read", systemImage: "bookmark")
                     }
-                    NavigationLink(destination: InProgressView()) {
+                    NavigationLink(destination: InProgressView()
+                        .background(.background)) {
                         Label("In process", systemImage: "arrow.right.circle")
                     }
-                    NavigationLink(destination: FinishedBooksView()) {
+                    NavigationLink(destination: FinishedBooksView()
+                        .background(.background)) {
                         Label("Finished", systemImage: "book.closed.circle")
                     }
-                    NavigationLink(destination: LoanedBooksListView()) {
+                    NavigationLink(destination: LoanedBooksListView()
+                        .background(.background)) {
                         Label("Loaned", systemImage: "person.badge.clock")
                     }
                 }
@@ -41,15 +46,18 @@ struct ContentView: View {
                     .font(.subheadline)
                     .fontWeight(.semibold)
                 Group {
-                    NavigationLink(destination: FavoriteBooksView()) {
+                    NavigationLink(destination: FavoriteBooksView()
+                        .background(.background)) {
                         Label("Favorite books", systemImage: "star")
                     }
                     ForEach(userListEntities) { userList in
-                        NavigationLink(destination: UserListView(listName: userList.listName)) {
+                        NavigationLink(destination: UserListView(listName: userList.listName)
+                            .background(.background)) {
                             Label(userList.listName, systemImage: "list.bullet")
                         }
                     }
-                    NavigationLink(destination: NewListView()) {
+                    NavigationLink(destination: NewListView()
+                        .background(.background)) {
                         Label("New list", systemImage: "plus")
                         }
                 }
@@ -64,6 +72,7 @@ struct ContentView: View {
                     }
                 }
             AllBooksView()
+                .background(.background)
         }
     }
 }

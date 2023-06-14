@@ -34,16 +34,17 @@ struct LoanedBooksListView: View {
                 LazyVGrid(columns: columns, spacing: 20) {
                     ForEach(bookEntities) { bookEntity in
                         if (!bookEntity.loanedTo.isEmpty) {
-                            VStack(spacing:0) {
+                            VStack(alignment: .leading, spacing:0) {
                                 BookCardView(book: bookEntity).onTapGesture {
                                     bookSelected = bookEntity
                                 }
                                 Text("Loaned to \(bookEntity.loanedTo)")
                                     .fontWeight(.bold)
+                                    .padding(.leading)
                             }
                         }
                     }
-                }.background(.background)
+                }
             }
             .navigationTitle("Loaned books")
         }

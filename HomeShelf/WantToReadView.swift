@@ -39,7 +39,7 @@ struct WantToReadView: View {
                             }
                         }
                     }
-                }.background(.background)
+                }
             }
             .navigationTitle("Want to read")
         }

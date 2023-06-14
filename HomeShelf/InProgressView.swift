@@ -39,7 +39,7 @@ struct InProgressView: View {
                             }
                         }
                     }
-                }.background(.background)
+                }
             }
             .navigationTitle("In process")
         }
