@@ -96,7 +96,7 @@ struct ExploreBookView: View {
                     Button(action: {
                         reviewEditSheetActivated = true
                     }) {
-                        Image(systemName: "pencil")
+                        Image(systemName: "square.and.pencil")
                     }.buttonStyle(.plain)
                         .sheet(isPresented: $reviewEditSheetActivated) {
                             ReviewEditView(book: book, review: book.review, isReviewEditActivated: $reviewEditSheetActivated)
