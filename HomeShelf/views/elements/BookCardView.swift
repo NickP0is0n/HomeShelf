@@ -9,13 +9,25 @@ import SwiftUI
 
 struct BookCardView: View {
     let book: BookEntity
+    @Environment(\.colorScheme) var colorScheme
     
     var body: some View {
         VStack(alignment: .leading) {
-            Image(nsImage: NSImage.init(data: book.cover)!)
-                .resizable()
-                .frame(width: 105, height: 160)
-                .padding()
+            if (colorScheme == .dark) {
+                Image(nsImage: NSImage.init(data: book.cover)!)
+                    .resizable()
+                    .frame(width: 115, height: 170)
+                    .shadow(color: Color(NSImage.init(data: book.cover)!.averageColor ?? NSColor(Color.white)), radius: 10, y: 5)
+                    .padding()
+            }
+            else {
+                Image(nsImage: NSImage.init(data: book.cover)!)
+                    .resizable()
+                    .frame(width: 115, height: 170)
+                    .shadow(radius: 10)
+                    .padding()
+            }
+            
             if (book.isFavorite) {
                 Text("\(book.title) 􀊵")
                     .font(.headline)

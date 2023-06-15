@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3904AFE12A3B1370004FE94C /* AverageColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3904AFE02A3B1370004FE94C /* AverageColorExtension.swift */; };
 		390BE47F2A3A29B2004B1716 /* BookEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 390BE47B2A3A29B2004B1716 /* BookEntity+CoreDataClass.swift */; };
 		390BE4802A3A29B2004B1716 /* BookEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 390BE47C2A3A29B2004B1716 /* BookEntity+CoreDataProperties.swift */; };
 		390BE4812A3A29B2004B1716 /* UserListEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 390BE47D2A3A29B2004B1716 /* UserListEntity+CoreDataClass.swift */; };
@@ -57,6 +58,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3904AFE02A3B1370004FE94C /* AverageColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AverageColorExtension.swift; sourceTree = "<group>"; };
 		390BE47B2A3A29B2004B1716 /* BookEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BookEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
 		390BE47C2A3A29B2004B1716 /* BookEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BookEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		390BE47D2A3A29B2004B1716 /* UserListEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserListEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -183,6 +185,7 @@
 				390FE1062A34694700E3A84E /* LibraryDataModel.xcdatamodeld */,
 				390FE12F2A34715000E3A84E /* DataController.swift */,
 				396EF3472A3A3880007B46C3 /* DataModel.swift */,
+				3904AFE02A3B1370004FE94C /* AverageColorExtension.swift */,
 			);
 			path = utility;
 			sourceTree = "<group>";
@@ -387,6 +390,7 @@
 				390FE1302A34715000E3A84E /* DataController.swift in Sources */,
 				3936EEB22A39C67E00FB2144 /* UserListView.swift in Sources */,
 				3936EEB42A39C7A400FB2144 /* NewListView.swift in Sources */,
+				3904AFE12A3B1370004FE94C /* AverageColorExtension.swift in Sources */,
 				390BE4802A3A29B2004B1716 /* BookEntity+CoreDataProperties.swift in Sources */,
 				3930D9492A38673C00027A95 /* ReviewEditView.swift in Sources */,
 				394CC9F62A37829200994E32 /* ProgressEditView.swift in Sources */,
