@@ -29,7 +29,7 @@ struct NewListView: View {
                     Spacer()
                     Button(action: okButtonAction, label: {
                         Text("Save")
-                    }).buttonStyle(.borderedProminent)
+                    }).buttonStyle(.borderedProminent).focusable().controlSize(.large)
                 }.padding()
                 Spacer()
             }

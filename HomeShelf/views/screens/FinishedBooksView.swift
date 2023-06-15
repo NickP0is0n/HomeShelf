@@ -38,7 +38,7 @@ struct FinishedBooksView: View {
                                 bookSelected = bookEntity
                             }) {
                                 BookCardView(book: bookEntity)
-                            }.buttonStyle(.plain)
+                            }.buttonStyle(.plain).focusable()
                         }
                     }
                 }.background(.background)

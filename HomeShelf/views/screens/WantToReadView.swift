@@ -38,7 +38,7 @@ struct WantToReadView: View {
                                 bookSelected = bookEntity
                             }) {
                                 BookCardView(book: bookEntity)
-                            }.buttonStyle(.plain)
+                            }.buttonStyle(.plain).focusable()
                         }
                     }
                 }
