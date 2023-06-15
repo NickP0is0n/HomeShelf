@@ -69,12 +69,12 @@ struct ExploreBookView: View {
                             Text("Update progress")
                         }.sheet(isPresented: $progressEditSheetActivated) {
                             ProgressEditView(progressEditSheetActivated: $progressEditSheetActivated, book: book)
-                        }
+                        }.controlSize(.large)
                         Button(action: addBookToListButtonAction) {
                             Text("Add to list")
                         }.sheet(isPresented: $addBookToListSheetActivated) {
                             AddBookToCustomListView(book: book, dataModel: userListEntities.convertToToggleDataModel(), isBookListEditorActivated: $addBookToListSheetActivated)
-                        }
+                        }.controlSize(.large)
                         Button(action: loanBookButtonAction) {
                             if (book.loanedTo.isEmpty) {
                                 Text("Loan book")
@@ -84,7 +84,7 @@ struct ExploreBookView: View {
                             }
                         }.sheet(isPresented: $bookLoanSheetActivated) {
                             LoanBookView(loanBookSheetActivated: $bookLoanSheetActivated, book: book)
-                        }
+                        }.controlSize(.large)
                     }.padding(.top)
                 }.frame(maxWidth: .infinity, maxHeight: .infinity)
             }.padding()
