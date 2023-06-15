@@ -11,6 +11,7 @@ struct ExploreBookView: View {
     @ObservedObject var book: BookEntity
     @EnvironmentObject var manager: DataController
     @Environment(\.managedObjectContext) private var viewContext
+    @Environment(\.colorScheme) var colorScheme
     @FetchRequest(sortDescriptors: []) private var userListEntities: FetchedResults<UserListEntity>
     @State var progressEditSheetActivated = false
     @State var reviewEditSheetActivated = false
@@ -20,11 +21,22 @@ struct ExploreBookView: View {
     var body: some View {
         VStack(alignment: .leading) {
             HStack (alignment: .top, spacing: 12) {
-                Image(nsImage: NSImage.init(data: book.cover)!)
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .clipped()
-                    .frame(maxWidth: 300, maxHeight: .infinity)
+                if (colorScheme == .dark) {
+                    Image(nsImage: NSImage.init(data: book.cover)!)
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .clipped()
+                        .shadow(color: Color(NSImage.init(data: book.cover)!.averageColor ?? NSColor(Color.white)), radius: 10, y: 5)
+                        .frame(maxWidth: 300, maxHeight: .infinity)
+                }
+                else {
+                    Image(nsImage: NSImage.init(data: book.cover)!)
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .clipped()
+                        .shadow(radius: 10)
+                        .frame(maxWidth: 300, maxHeight: .infinity)
+                }
                 VStack(alignment: .leading, spacing: 8) {
                     HStack() {
                         Text(book.title)
