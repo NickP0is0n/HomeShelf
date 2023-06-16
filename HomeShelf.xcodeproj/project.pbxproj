@@ -34,6 +34,8 @@
 		39B118B62A31D9DE007BAA63 /* HomeShelfTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39B118B52A31D9DE007BAA63 /* HomeShelfTests.swift */; };
 		39B118C02A31D9DE007BAA63 /* HomeShelfUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39B118BF2A31D9DE007BAA63 /* HomeShelfUITests.swift */; };
 		39B118C22A31D9DE007BAA63 /* HomeShelfUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39B118C12A31D9DE007BAA63 /* HomeShelfUITestsLaunchTests.swift */; };
+		39D86A972A3C89D900AB028D /* NewBookViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39D86A962A3C89D900AB028D /* NewBookViewModel.swift */; };
+		39D86A992A3C910C00AB028D /* NewBookEntryField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39D86A982A3C910C00AB028D /* NewBookEntryField.swift */; };
 		39EA02FB2A35B99F00C2EFA2 /* BookCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39EA02FA2A35B99F00C2EFA2 /* BookCardView.swift */; };
 		39ECAFB42A387AD6003F0E35 /* FavoriteBooksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39ECAFB32A387AD6003F0E35 /* FavoriteBooksView.swift */; };
 		39ECAFB62A387F6F003F0E35 /* WantToReadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39ECAFB52A387F6F003F0E35 /* WantToReadView.swift */; };
@@ -89,6 +91,8 @@
 		39B118BB2A31D9DE007BAA63 /* HomeShelfUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HomeShelfUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		39B118BF2A31D9DE007BAA63 /* HomeShelfUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeShelfUITests.swift; sourceTree = "<group>"; };
 		39B118C12A31D9DE007BAA63 /* HomeShelfUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeShelfUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		39D86A962A3C89D900AB028D /* NewBookViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewBookViewModel.swift; sourceTree = "<group>"; };
+		39D86A982A3C910C00AB028D /* NewBookEntryField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewBookEntryField.swift; sourceTree = "<group>"; };
 		39EA02FA2A35B99F00C2EFA2 /* BookCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookCardView.swift; sourceTree = "<group>"; };
 		39ECAFB32A387AD6003F0E35 /* FavoriteBooksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteBooksView.swift; sourceTree = "<group>"; };
 		39ECAFB52A387F6F003F0E35 /* WantToReadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WantToReadView.swift; sourceTree = "<group>"; };
@@ -134,6 +138,7 @@
 		396EF34A2A3A3C1E007B46C3 /* views */ = {
 			isa = PBXGroup;
 			children = (
+				39D86A952A3C89BF00AB028D /* view_models */,
 				396EF34D2A3A3CE0007B46C3 /* screens */,
 				396EF34B2A3A3C4B007B46C3 /* sheets */,
 				396EF34C2A3A3CC0007B46C3 /* elements */,
@@ -158,6 +163,7 @@
 			children = (
 				39EA02FA2A35B99F00C2EFA2 /* BookCardView.swift */,
 				391849832A3707D700E34E4D /* BookRatingView.swift */,
+				39D86A982A3C910C00AB028D /* NewBookEntryField.swift */,
 			);
 			path = elements;
 			sourceTree = "<group>";
@@ -247,6 +253,14 @@
 				39B118C12A31D9DE007BAA63 /* HomeShelfUITestsLaunchTests.swift */,
 			);
 			path = HomeShelfUITests;
+			sourceTree = "<group>";
+		};
+		39D86A952A3C89BF00AB028D /* view_models */ = {
+			isa = PBXGroup;
+			children = (
+				39D86A962A3C89D900AB028D /* NewBookViewModel.swift */,
+			);
+			path = view_models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -395,10 +409,12 @@
 				3930D9492A38673C00027A95 /* ReviewEditView.swift in Sources */,
 				394CC9F62A37829200994E32 /* ProgressEditView.swift in Sources */,
 				3930D94D2A3872B800027A95 /* FinishedBooksView.swift in Sources */,
+				39D86A972A3C89D900AB028D /* NewBookViewModel.swift in Sources */,
 				39B118A62A31D9DB007BAA63 /* ContentView.swift in Sources */,
 				3936EEA62A39A63F00FB2144 /* LoanBookView.swift in Sources */,
 				390BE47F2A3A29B2004B1716 /* BookEntity+CoreDataClass.swift in Sources */,
 				390BE4842A3A2B2E004B1716 /* AddBookToCustomListView.swift in Sources */,
+				39D86A992A3C910C00AB028D /* NewBookEntryField.swift in Sources */,
 				3936EEA82A39A9C600FB2144 /* LoanedBooksListView.swift in Sources */,
 				39ECAFB62A387F6F003F0E35 /* WantToReadView.swift in Sources */,
 				39ECAFB42A387AD6003F0E35 /* FavoriteBooksView.swift in Sources */,

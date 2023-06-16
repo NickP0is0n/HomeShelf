@@ -13,11 +13,7 @@ struct NewBookView: View {
     @EnvironmentObject var manager: DataController
     @Environment(\.managedObjectContext) private var viewContext
     @Binding var addBookSheetActivated: Bool
-    @State var titleFieldText: String = ""
-    @State var authorFieldText: String = ""
-    @State var pageCountText: String = ""
-    @State var storeLinkText: String = ""
-    @State var coverPictureFilename: String = ""
+    @ObservedObject var newBookViewModel = NewBookViewModel()
     
     var body: some View {
         VStack {
@@ -28,21 +24,17 @@ struct NewBookView: View {
             Divider()
             VStack(alignment: .leading) {
                 Form {
-                    TextField("Title", text: $titleFieldText)
-                        .padding(.bottom)
-                    TextField("Author", text: $authorFieldText)
-                        .padding(.bottom)
-                    TextField("Page count", text: $pageCountText)
-                        .padding(.bottom)
-                    TextField("Store link", text: $storeLinkText)
-                        .padding(.bottom)
-                }.padding(.top).frame(width: 270)
+                    NewBookEntryField(title: "Title", prompt: newBookViewModel.titleErrorPrompt, field: $newBookViewModel.title)
+                    NewBookEntryField(title: "Author", prompt: newBookViewModel.authorErrorPrompt, field: $newBookViewModel.author)
+                    NewBookEntryField(title: "Page count", prompt: newBookViewModel.pageCountErrorPrompt, field: $newBookViewModel.pageCount)
+                    NewBookEntryField(title: "Store link", prompt: "", field: $newBookViewModel.storeLink)
+                }.padding(.top).frame(width: 450)
                 HStack {
                     Text("Cover")
                         .padding(.leading)
-                    if (coverPictureFilename != "") {
+                    if (!newBookViewModel.isCoverPictureEmpty()) {
                         Button(action: imageSelectButtonAction) {
-                            Image(nsImage: NSImage.init(byReferencingFile: coverPictureFilename)!)
+                            Image(nsImage: NSImage.init(byReferencingFile: newBookViewModel.coverPictureFilename)!)
                                 .resizable()
                                 .frame(width: 50, height: 75).cornerRadius(9)
                                 .padding(.leading)
@@ -55,6 +47,8 @@ struct NewBookView: View {
                                 .padding(.leading)
                         }.buttonStyle(.plain).focusable()
                     }
+                    Text(newBookViewModel.coverPictureErrorPrompt)
+                        .padding(.leading)
                 }
             }
                 HStack {
@@ -70,7 +64,7 @@ struct NewBookView: View {
                     .padding([.bottom, .trailing])
                     .focusable()
                 }
-            }.frame(width: 400)
+            }.frame(width: 500)
         
     }
     
@@ -79,17 +73,19 @@ struct NewBookView: View {
     }
     
     func okButtonAction() {
-        saveBook()
-        addBookSheetActivated = false
+        if (newBookViewModel.isModelValid()) {
+            saveBook()
+            addBookSheetActivated = false
+        }
     }
     
     func saveBook() {
         let newBookEntity = BookEntity(context: viewContext)
-        newBookEntity.title = titleFieldText
-        newBookEntity.author = authorFieldText
-        newBookEntity.cover = NSImage.init(byReferencingFile: coverPictureFilename)!.tiffRepresentation!
-        newBookEntity.pageCount = Int16(pageCountText) ?? 0
-        newBookEntity.storeUrl = storeLinkText
+        newBookEntity.title = newBookViewModel.title
+        newBookEntity.author = newBookViewModel.author
+        newBookEntity.cover = NSImage.init(byReferencingFile: newBookViewModel.coverPictureFilename)!.tiffRepresentation!
+        newBookEntity.pageCount = Int16(newBookViewModel.pageCount) ?? 0
+        newBookEntity.storeUrl = newBookViewModel.storeLink
         newBookEntity.progress = 0
         newBookEntity.isFavorite = false
         newBookEntity.loanedTo = ""
@@ -108,7 +104,7 @@ struct NewBookView: View {
                 panel.allowsMultipleSelection = false
                 panel.canChooseDirectories = false
                 if panel.runModal() == .OK {
-                    self.coverPictureFilename = panel.url?.path ?? "<none>"
+                    newBookViewModel.coverPictureFilename = panel.url?.path ?? "<none>"
         }
     }
 }
