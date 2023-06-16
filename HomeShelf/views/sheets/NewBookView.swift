@@ -41,21 +41,19 @@ struct NewBookView: View {
                     Text("Cover")
                         .padding(.leading)
                     if (coverPictureFilename != "") {
-                        Image(nsImage: NSImage.init(byReferencingFile: coverPictureFilename)!)
-                            .resizable()
-                            .frame(width: 50, height: 75).cornerRadius(9)
-                            .onTapGesture {
-                                imageSelectButtonAction()
-                            }
-                            .padding(.leading)
+                        Button(action: imageSelectButtonAction) {
+                            Image(nsImage: NSImage.init(byReferencingFile: coverPictureFilename)!)
+                                .resizable()
+                                .frame(width: 50, height: 75).cornerRadius(9)
+                                .padding(.leading)
+                        }.buttonStyle(.plain).focusable()
                     }
                     else {
-                        Rectangle()
-                            .frame(width: 50, height: 75).cornerRadius(9)
-                            .onTapGesture {
-                                imageSelectButtonAction()
-                            }
-                            .padding(.leading)
+                        Button(action: imageSelectButtonAction) {
+                            Rectangle()
+                                .frame(width: 50, height: 75).cornerRadius(9)
+                                .padding(.leading)
+                        }.buttonStyle(.plain).focusable()
                     }
                 }
             }
@@ -65,10 +63,12 @@ struct NewBookView: View {
                         Text("Cancel")
                     }.keyboardShortcut(.cancelAction)
                     .padding([.leading, .bottom])
+                    .focusable()
                     Button(action: okButtonAction) {
                         Text("OK")
                     }.keyboardShortcut(.defaultAction)
                     .padding([.bottom, .trailing])
+                    .focusable()
                 }
             }.frame(width: 400)
         
