@@ -20,7 +20,7 @@ struct BookRatingView: View {
                         book.rating = Int16(i)
                         saveBook()
                     }) {
-                        Image(systemName: "star.fill")
+                        Image(systemName: "star.fill").contentShape(Rectangle())
                     }.buttonStyle(.plain)
                 }
                 else {
@@ -28,7 +28,7 @@ struct BookRatingView: View {
                         book.rating = Int16(i)
                         saveBook()
                     }) {
-                        Image(systemName: "star")
+                        Image(systemName: "star").contentShape(Rectangle())
                     }.buttonStyle(.plain)
                 }
             }

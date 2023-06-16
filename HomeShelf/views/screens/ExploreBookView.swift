@@ -50,6 +50,7 @@ struct ExploreBookView: View {
                             }) {
                                 Image(systemName: "heart.fill")
                                     .padding(.top)
+                                    .contentShape(Rectangle())
                             }.buttonStyle(.plain)
                         }
                         else {
@@ -59,6 +60,7 @@ struct ExploreBookView: View {
                             }) {
                                 Image(systemName: "heart")
                                     .padding(.top)
+                                    .contentShape(Rectangle())
                             }.buttonStyle(.plain)
                         }
                     }
@@ -108,7 +110,7 @@ struct ExploreBookView: View {
                     Button(action: {
                         reviewEditSheetActivated = true
                     }) {
-                        Image(systemName: "square.and.pencil")
+                        Image(systemName: "square.and.pencil").contentShape(Rectangle())
                     }.buttonStyle(.plain)
                         .sheet(isPresented: $reviewEditSheetActivated) {
                             ReviewEditView(book: book, review: book.review, isReviewEditActivated: $reviewEditSheetActivated)
