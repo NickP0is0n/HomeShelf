@@ -39,15 +39,17 @@ struct LoanBookView: View {
     }
     
     private func okButtonAction() {
-        book.loanedTo = loanPerson
-        do {
-            try viewContext.save()
-        } catch {
-            viewContext.rollback()
-            let nserror = error as NSError
-            fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
+        if (!loanPerson.isEmpty) {
+            book.loanedTo = loanPerson
+            do {
+                try viewContext.save()
+            } catch {
+                viewContext.rollback()
+                let nserror = error as NSError
+                fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
+            }
+            loanBookSheetActivated = false
         }
-        loanBookSheetActivated = false
     }
     
     private func cancelButtonAction() {

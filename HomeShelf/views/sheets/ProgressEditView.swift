@@ -40,19 +40,32 @@ struct ProgressEditView: View {
     }
     
     private func okButtonAction() {
-        book.progress = Int16(pageCompleted)!
-        do {
-            try viewContext.save()
-        } catch {
-            viewContext.rollback()
-            let nserror = error as NSError
-            fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
+        if (!pageCompleted.isEmpty && isEnteredProgressValid()) {
+            book.progress = Int16(pageCompleted)!
+            do {
+                try viewContext.save()
+            } catch {
+                viewContext.rollback()
+                let nserror = error as NSError
+                fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
+            }
+            progressEditSheetActivated = false
         }
-        progressEditSheetActivated = false
     }
     
     private func cancelButtonAction() {
         progressEditSheetActivated = false
+    }
+    
+    private func isEnteredProgressValid() -> Bool {
+        let progressTest = NSPredicate(format: "SELF MATCHES %@", "^[1-9][0-9]*$") // Only matches numbers
+        if (progressTest.evaluate(with: progressTest.evaluate(with: pageCompleted))) {
+            let progress = Int(pageCompleted)!
+            if (progress >= 0 && progress <= book.pageCount) {
+                return true
+            }
+        }
+        return false
     }
 }
 
