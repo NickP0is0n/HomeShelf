@@ -1,3 +1,4 @@
+![Logo](https://github.com/NickP0is0n/HomeShelf/blob/main/readme_logo.png?raw=true)
 # HomeShelf
 
 HomeShelf is a user-friendly Mac application designed to streamline the management of your personal home library of paper books. With HomeShelf, you can effortlessly organize, catalog, and keep track of your book collection, ensuring that your literary treasures are always easily accessible.
