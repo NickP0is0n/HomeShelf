@@ -149,6 +149,7 @@
 		396EF34B2A3A3C4B007B46C3 /* sheets */ = {
 			isa = PBXGroup;
 			children = (
+				3936EEB32A39C7A400FB2144 /* NewListView.swift */,
 				39ED86772A33304E001F7580 /* NewBookView.swift */,
 				394CC9F52A37829200994E32 /* ProgressEditView.swift */,
 				3930D9482A38673C00027A95 /* ReviewEditView.swift */,
@@ -180,7 +181,6 @@
 				39ECAFB52A387F6F003F0E35 /* WantToReadView.swift */,
 				3936EEA72A39A9C600FB2144 /* LoanedBooksListView.swift */,
 				3936EEB12A39C67E00FB2144 /* UserListView.swift */,
-				3936EEB32A39C7A400FB2144 /* NewListView.swift */,
 			);
 			path = screens;
 			sourceTree = "<group>";

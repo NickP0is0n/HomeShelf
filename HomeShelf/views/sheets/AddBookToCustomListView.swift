@@ -48,7 +48,7 @@ struct AddBookToCustomListView: View {
                     Text("Cancel")
                 }.keyboardShortcut(.cancelAction)
             }.padding()
-        }.frame(minWidth: 200, minHeight: 200)
+        }.frame(minWidth: 400, minHeight: 400)
             .onAppear {
                 for (index, _) in dataModel.toggles.enumerated() {
                     if (book.inUserList.contains(dataModel.toggles[index].title)) {

@@ -12,6 +12,7 @@ struct ContentView: View {
     @EnvironmentObject var manager: DataController
     @Environment(\.managedObjectContext) private var viewContext
     @FetchRequest(sortDescriptors: []) private var userListEntities: FetchedResults<UserListEntity>
+    @State var newListSheetActivated = false
    
     var body: some View {
         NavigationView {
@@ -56,8 +57,11 @@ struct ContentView: View {
                             Label(userList.listName, systemImage: "list.bullet")
                         }
                     }
-                    NavigationLink(destination: NewListView()
-                        .background(.background)) {
+                    NavigationLink(destination: ScrollView{}.onAppear { // workaround to show the sheet
+                        newListSheetActivated = true
+                    }.sheet(isPresented: $newListSheetActivated) {
+                        NewListView(isNewListSheetActivated: $newListSheetActivated)
+                    }.background(.background)) {
                         Label("New list", systemImage: "plus")
                         }
                 }
