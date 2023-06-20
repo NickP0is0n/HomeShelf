@@ -57,8 +57,10 @@ struct ContentView: View {
                             Label(userList.listName, systemImage: "list.bullet")
                         }
                     }
-                    NavigationLink(destination: ScrollView{}.onAppear { // workaround to show the sheet
-                        newListSheetActivated = true
+                    NavigationLink(destination: AllBooksView()
+                        .background(.background)
+                        .onAppear {
+                            newListSheetActivated = true
                     }.sheet(isPresented: $newListSheetActivated) {
                         NewListView(isNewListSheetActivated: $newListSheetActivated)
                     }.background(.background)) {
