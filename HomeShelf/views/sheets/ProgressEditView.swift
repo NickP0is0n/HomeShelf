@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct ProgressEditView: View {
-    @EnvironmentObject var manager: DataController
     @Environment(\.managedObjectContext) private var viewContext
     @Binding var progressEditSheetActivated: Bool
     @State private var pageCompleted = ""
@@ -59,7 +58,7 @@ struct ProgressEditView: View {
     
     private func isEnteredProgressValid() -> Bool {
         let progressTest = NSPredicate(format: "SELF MATCHES %@", "^[1-9][0-9]*$") // Only matches numbers
-        if (progressTest.evaluate(with: progressTest.evaluate(with: pageCompleted))) {
+        if (progressTest.evaluate(with: pageCompleted)) {
             let progress = Int(pageCompleted)!
             if (progress >= 0 && progress <= book.pageCount) {
                 return true

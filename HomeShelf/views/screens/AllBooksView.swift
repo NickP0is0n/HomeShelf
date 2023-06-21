@@ -9,8 +9,6 @@ import SwiftUI
 
 struct AllBooksView: View {
     @State var addBookSheetActivated = false
-    @EnvironmentObject var manager: DataController
-    @Environment(\.managedObjectContext) private var viewContext
     @FetchRequest(sortDescriptors: []) private var bookEntities: FetchedResults<BookEntity>
     @State var bookSelected: BookEntity? = nil
     

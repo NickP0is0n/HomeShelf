@@ -10,7 +10,6 @@ import AppKit
 import CoreData
 
 struct NewBookView: View {
-    @EnvironmentObject var manager: DataController
     @Environment(\.managedObjectContext) private var viewContext
     @Binding var addBookSheetActivated: Bool
     @ObservedObject var newBookViewModel = NewBookViewModel()

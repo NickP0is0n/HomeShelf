@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct AddBookToCustomListView: View {
-    @EnvironmentObject var manager: DataController
     @Environment(\.managedObjectContext) private var viewContext
     let book: BookEntity
     @ObservedObject var dataModel: DataModel

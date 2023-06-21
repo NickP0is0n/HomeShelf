@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct LoanBookView: View {
-    @EnvironmentObject var manager: DataController
     @Environment(\.managedObjectContext) private var viewContext
     @Binding var loanBookSheetActivated: Bool
     @State private var loanPerson = ""

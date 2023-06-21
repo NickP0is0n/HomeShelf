@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct ReviewEditView: View {
-    @EnvironmentObject var manager: DataController
     @Environment(\.managedObjectContext) private var viewContext
     let book: BookEntity
     @State var review: String

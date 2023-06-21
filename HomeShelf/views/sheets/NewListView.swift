@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct NewListView: View {
-    @EnvironmentObject var manager: DataController
     @Environment(\.managedObjectContext) private var viewContext
     @State private var listName = ""
     @Binding var isNewListSheetActivated: Bool

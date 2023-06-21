@@ -9,7 +9,6 @@ import SwiftUI
 
 struct ExploreBookView: View {
     @ObservedObject var book: BookEntity
-    @EnvironmentObject var manager: DataController
     @Environment(\.managedObjectContext) private var viewContext
     @Environment(\.colorScheme) var colorScheme
     @FetchRequest(sortDescriptors: []) private var userListEntities: FetchedResults<UserListEntity>

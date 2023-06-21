@@ -8,9 +8,6 @@
 import SwiftUI
 
 struct ContentView: View {
-    
-    @EnvironmentObject var manager: DataController
-    @Environment(\.managedObjectContext) private var viewContext
     @FetchRequest(sortDescriptors: []) private var userListEntities: FetchedResults<UserListEntity>
     @State var newListSheetActivated = false
    
