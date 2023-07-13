@@ -14,10 +14,7 @@ struct ContentView: View {
     var body: some View {
         NavigationView {
             List {
-                Text("Library")
-                    .font(.subheadline)
-                    .fontWeight(.semibold)
-                Group {
+                Section(header: Text("Library")) {
                     NavigationLink(destination: AllBooksView()
                         .background(.background)) {
                         Label("All", systemImage: "book")
@@ -39,11 +36,7 @@ struct ContentView: View {
                         Label("Loaned", systemImage: "person.badge.clock")
                     }
                 }
-                Spacer()
-                Text("Your lists")
-                    .font(.subheadline)
-                    .fontWeight(.semibold)
-                Group {
+                Section(header: Text("Your lists")) {
                     NavigationLink(destination: FavoriteBooksView()
                         .background(.background)) {
                         Label("Favorite books", systemImage: "star")
@@ -62,7 +55,7 @@ struct ContentView: View {
                         NewListView(isNewListSheetActivated: $newListSheetActivated)
                     }.background(.background)) {
                         Label("New list", systemImage: "plus")
-                        }
+                    }
                 }
             }
             .listStyle(SidebarListStyle())
